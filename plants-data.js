@@ -159,6 +159,12 @@ const PLANT_LINKS = {
 
   // ── Companion Flowers / Pest Plants ──────────────────────────────────────
   'Daffodil':                   'https://en.wikipedia.org/wiki/Narcissus_(plant)',
+  'Black currant':              'https://en.wikipedia.org/wiki/Blackcurrant',
+  'Ostrich fern':               'https://en.wikipedia.org/wiki/Matteuccia_struthiopteris',
+  'Ramps / Wild leek':          'https://en.wikipedia.org/wiki/Allium_tricoccum',
+  'Chives / Garlic chives':     'https://en.wikipedia.org/wiki/Chives',
+  'White clover':               'https://en.wikipedia.org/wiki/Trifolium_repens',
+  'Red clover':                 'https://en.wikipedia.org/wiki/Trifolium_pratense',
 
   // ── Companion Herb Aliases (used in companion planting tables) ────────────
   'Lavender':                   'https://en.wikipedia.org/wiki/Lavandula',
@@ -234,28 +240,51 @@ const PLANT_LINKS = {
 
 /**
  * Auto-Linker
- * Runs on DOMContentLoaded. Finds every <strong> inside a <td>,
- * checks if its text matches a key in PLANT_LINKS, and wraps it
- * in an <a> tag. Opens in new tab. Skips cells already linked.
+ * Runs on DOMContentLoaded.
+ * Pass 1 — wraps <strong> inside <td> (main crop rows).
+ * Pass 2 — wraps plain <td> cells whose full text exactly matches a plant
+ *           name (companion rows in guild tables, nitrogen fixer tables, etc.)
+ * Both passes use a case-insensitive lookup so "White clover" matches
+ * "White Clover" and similar mixed-case variations in guild cards.
  */
 document.addEventListener('DOMContentLoaded', function () {
-  const cells = document.querySelectorAll('td strong');
-  cells.forEach(function (el) {
-    // Skip if already inside a link
+
+  // Build a lowercase → URL map for case-insensitive matching
+  var lowerMap = {};
+  Object.keys(PLANT_LINKS).forEach(function (key) {
+    lowerMap[key.toLowerCase()] = { url: PLANT_LINKS[key], display: key };
+  });
+
+  function makeLink(url, title) {
+    var a = document.createElement('a');
+    a.href   = url;
+    a.target = '_blank';
+    a.rel    = 'noopener noreferrer';
+    a.title  = 'Learn more about ' + title;
+    return a;
+  }
+
+  // Pass 1: td > strong elements (central crop rows)
+  document.querySelectorAll('td strong').forEach(function (el) {
     if (el.closest('a')) return;
-
-    const name = el.textContent.trim();
-    const url  = PLANT_LINKS[name];
-    if (!url) return;
-
-    const link = document.createElement('a');
-    link.href   = url;
-    link.target = '_blank';
-    link.rel    = 'noopener noreferrer';
-    link.title  = 'Learn more about ' + name;
-
-    // Wrap the <strong> content — preserve the <strong> tag
+    var name  = el.textContent.trim();
+    var entry = lowerMap[name.toLowerCase()];
+    if (!entry) return;
+    var link = makeLink(entry.url, name);
     el.parentNode.insertBefore(link, el);
     link.appendChild(el);
   });
+
+  // Pass 2: plain td cells with no strong/anchor whose entire text matches a plant name
+  document.querySelectorAll('td').forEach(function (td) {
+    if (td.querySelector('strong, a')) return;
+    var name  = td.textContent.trim();
+    var entry = lowerMap[name.toLowerCase()];
+    if (!entry) return;
+    var link = makeLink(entry.url, name);
+    link.textContent = name;
+    td.textContent   = '';
+    td.appendChild(link);
+  });
+
 });

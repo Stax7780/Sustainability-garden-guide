@@ -545,6 +545,25 @@ tbody tr.category-row td {
 
 .note-box strong { color: var(--brown); }
 
+/* ---- Content Links (paragraphs, notes, etc.) ---- */
+
+.site-main a, .site-main a:visited {
+  color: var(--green-mid);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.site-main a:hover {
+  color: var(--green-light);
+  text-decoration-style: solid;
+}
+
+[data-theme="dark"] .site-main a,
+[data-theme="dark"] .site-main a:visited { color: #8fc85a; }
+[data-theme="dark"] .site-main a:hover   { color: #b8de88; }
+
 /* ---- Plant Links ---- */
 
 td a, td a:visited {

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Companion Planting | Sustainability Garden Guide</title>
+    <meta name="description" content="Symbiosis-based planting guilds, nitrogen fixers, dynamic accumulators, and pest control through companion planting. By Stax.">
+  <meta property="og:title" content="Companion Planting — Symbiosis Guide">
+  <meta property="og:description" content="Food forest guilds, nitrogen-fixing plants, dynamic accumulators, pest control through planting, and combinations to avoid.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+  <style>
+    .guild-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .guild-card h3 {
+      margin-top: 0;
+      color: var(--green-dark);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .guild-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+    </div>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html">Home</a>
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html">Goal 3 — Perennial Garden</a>
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html">Grow Calendar</a>
+    <a href="companion-planting.html" class="active">Companion Planting</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Companion Planting — Symbiosis Guide</h1>
+    <p class="page-intro">
+      Every plant in this system should serve at least two roles: feed the people,
+      and feed the soil, repel pests, attract pollinators, or shelter a neighbor.
+      This guide covers beneficial guilds, nitrogen fixers, dynamic accumulators,
+      and combinations to avoid.
+    </p>
+
+    <h2>The Three Sisters — Annual Foundation Guild</h2>
+    <p>The oldest known companion planting system. Three plants that support each other completely.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Corn</strong></td><td>Vertical trellis for beans to climb; provides shade for squash</td></tr>
+          <tr><td><strong>Beans</strong></td><td>Fixes nitrogen from air into soil, feeding corn and squash</td></tr>
+          <tr><td><strong>Squash</strong></td><td>Broad leaves shade out weeds, retain soil moisture, deter pests</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);">
+      Plant in a mound. Corn first, beans 2 weeks later, squash after that. Minimum 3×3 ft per guild.
+      Scale up: 10×10 ft per guild for meaningful yield.
+    </p>
+
+    <h2>Perennial Food Forest Guilds</h2>
+    <p>A guild is a cluster of plants around one main crop. Each plant plays a role. Build these around every tree.</p>
+
+    <div class="guild-grid">
+      <div class="guild-card">
+        <h3>Apple / Pear Tree Guild</h3>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <thead><tr><th>Plant</th><th>Role</th><th>Position</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Apple or Pear</strong></td><td>Central crop</td><td>Center</td></tr>
+              <tr><td>Comfrey</td><td>Deep taproot mines minerals; leaves are mulch</td><td>Drip line</td></tr>
+              <tr><td>Chives / Garlic chives</td><td>Repel apple scab and aphids</td><td>Under canopy</td></tr>
+              <tr><td>Nasturtium</td><td>Trap crop for aphids</td><td>Outer ring</td></tr>
+              <tr><td>White clover</td><td>Nitrogen-fixing; feeds beneficial insects</td><td>Ground cover</td></tr>
+              <tr><td>Yarrow</td><td>Attracts predatory wasps that eat caterpillars</td><td>Outer ring</td></tr>
+              <tr><td>Daffodil</td><td>Repels deer, moles, voles from root zone</td><td>Drip line ring</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="guild-card">
+        <h3>Chestnut / Nut Tree Guild</h3>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <thead><tr><th>Plant</th><th>Role</th><th>Position</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Chestnut or Walnut</strong></td><td>Central crop</td><td>Center</td></tr>
+              <tr><td>Siberian Pea Shrub</td><td>Nitrogen-fixing windbreak; edible seeds</td><td>North / west side</td></tr>
+              <tr><td>Comfrey</td><td>Mineral accumulator; chop-and-drop mulch</td><td>Drip line</td></tr>
+              <tr><td>Ramps / Wild leek</td><td>Ground cover under canopy; shade-tolerant</td><td>Under canopy</td></tr>
+              <tr><td>Ostrich fern</td><td>Shade-tolerant ground cover; edible fiddleheads</td><td>Under canopy</td></tr>
+              <tr><td>Black currant</td><td>Mid-layer fruit; thrives in partial shade</td><td>Outer drip line</td></tr>
+              <tr><td>White clover</td><td>Nitrogen; pollinator support</td><td>Ground cover</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="guild-card">
+        <h3>Berry Shrub Guild</h3>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <thead><tr><th>Plant</th><th>Role</th><th>Position</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Berry shrub</strong></td><td>Central crop</td><td>Center</td></tr>
+              <tr><td>Comfrey</td><td>Mulch; mineral mining</td><td>Beside shrub</td></tr>
+              <tr><td>Chives</td><td>Repel aphids and gooseberry sawfly</td><td>Base of shrub</td></tr>
+              <tr><td>Nasturtium</td><td>Trap crop for aphids</td><td>Outer ring</td></tr>
+              <tr><td>Strawberry</td><td>Ground cover; fills gaps; vitamin C crop</td><td>Ground cover</td></tr>
+              <tr><td>White clover</td><td>Nitrogen; weed suppression</td><td>Ground cover</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <h2>Annual Companion Pairings</h2>
+
+    <div class="filter-bar">
+      <input type="text" id="search-companions" placeholder="Search crop name…" oninput="filterCompanions()" style="width:240px">
+    </div>
+
+    <div class="table-wrap">
+      <table id="companions-table">
+        <thead><tr><th>Plant</th><th>Good With</th><th>Why It Works</th></tr></thead>
+        <tbody>
+          <tr data-companion="tomatoes"><td><strong>Tomatoes</strong></td><td>Basil, marigold, carrot, parsley</td><td>Basil repels aphids + whitefly; marigolds repel nematodes</td></tr>
+          <tr data-companion="carrots"><td><strong>Carrots</strong></td><td>Chives, rosemary, leeks, onions</td><td>Alliums repel carrot fly</td></tr>
+          <tr data-companion="brassicas"><td><strong>Brassicas</strong></td><td>Dill, celery, chamomile, sage</td><td>Dill attracts parasitic wasps; sage repels cabbage moth</td></tr>
+          <tr data-companion="beans"><td><strong>Beans</strong></td><td>Carrots, squash, marigold</td><td>Beans fix nitrogen for neighbors</td></tr>
+          <tr data-companion="corn"><td><strong>Corn</strong></td><td>Beans, squash, melon</td><td>Three Sisters logic; beans feed corn with nitrogen</td></tr>
+          <tr data-companion="squash"><td><strong>Squash / Pumpkin</strong></td><td>Corn, beans, nasturtium</td><td>Nasturtium repels squash beetles</td></tr>
+          <tr data-companion="peppers"><td><strong>Peppers</strong></td><td>Basil, carrot, marjoram</td><td>Basil improves flavor and repels aphids</td></tr>
+          <tr data-companion="lettuce"><td><strong>Lettuce</strong></td><td>Tall crops (tomatoes, corn)</td><td>Needs afternoon shade in summer; uses space efficiently</td></tr>
+          <tr data-companion="garlic"><td><strong>Garlic</strong></td><td>Roses, stone fruit, brassicas</td><td>Repels aphids, Japanese beetles, borers</td></tr>
+          <tr data-companion="potatoes"><td><strong>Potatoes</strong></td><td>Horseradish, marigold, beans</td><td>Horseradish repels Colorado potato beetle</td></tr>
+          <tr data-companion="asparagus"><td><strong>Asparagus</strong></td><td>Tomatoes, parsley, basil</td><td>Tomatoes repel asparagus beetle; asparagus repels nematodes</td></tr>
+          <tr data-companion="onions"><td><strong>Onions</strong></td><td>Carrots, beets, chamomile</td><td>Chamomile improves growth; deters pests</td></tr>
+          <tr data-companion="cucumber"><td><strong>Cucumbers</strong></td><td>Dill, beans, radishes</td><td>Radishes repel cucumber beetles; dill attracts predators</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Combinations to Avoid</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Avoid Planting Together</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td>Onions + beans or peas</td><td>Alliums stunt legume growth</td></tr>
+          <tr><td>Fennel + almost everything</td><td>Allelopathic; keep isolated or in a pot</td></tr>
+          <tr><td>Potatoes + tomatoes</td><td>Same family; share blight disease</td></tr>
+          <tr><td>Walnut trees + most vegetables</td><td>Juglone (allelopathic compound) is toxic to many plants</td></tr>
+          <tr><td>Brassicas + brassicas (same bed, same year)</td><td>Same pest and disease pressure; rotate beds annually</td></tr>
+          <tr><td>Corn + tomatoes</td><td>Both heavy nitrogen feeders; compete aggressively</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Nitrogen Fixers — Feed the Whole System</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Type</th><th>Where to Use</th></tr></thead>
+        <tbody>
+          <tr><td><strong>White / Red Clover</strong></td><td>Ground cover</td><td>Between all beds; orchard ground cover; paths</td></tr>
+          <tr><td><strong>Beans (dry + fresh)</strong></td><td>Annual</td><td>Rotate through every bed; follow with heavy feeders</td></tr>
+          <tr><td><strong>Peas</strong></td><td>Annual</td><td>Early spring crop before main crops go in</td></tr>
+          <tr><td><strong>Siberian Pea Shrub</strong></td><td>Shrub</td><td>Windbreak on north / west; fixes 70–100 lbs N/acre/yr</td></tr>
+          <tr><td><strong>Autumn Olive</strong></td><td>Shrub / tree</td><td>Edge of property — check local invasive regulations first</td></tr>
+          <tr><td><strong>American Groundnut</strong></td><td>Vine</td><td>Trellis near heavy-feeding trees or vegetable beds</td></tr>
+          <tr><td><strong>Honey Locust</strong> (edible variety)</td><td>Tree</td><td>Canopy nitrogen fixer; pods are high-sugar livestock fodder</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Dynamic Accumulators — Mine Minerals from Deep Soil</h2>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
+      Deep taproots pull up calcium, potassium, and trace minerals from layers shallow-rooted plants can't reach.
+      Chop and drop as mulch throughout the season.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Minerals Concentrated</th><th>How to Use</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Comfrey</strong></td><td>Calcium, potassium, phosphorus, B12</td><td>Chop leaves 4–6×/season; use as mulch or liquid feed</td></tr>
+          <tr><td><strong>Yarrow</strong></td><td>Potassium, copper, phosphorus</td><td>Let self-seed at bed edges; cut before setting seed</td></tr>
+          <tr><td><strong>Chicory</strong></td><td>Calcium, potassium</td><td>Grow in rough areas; chop before seeding out</td></tr>
+          <tr><td><strong>Dandelion</strong></td><td>Calcium, iron, potassium</td><td>Let grow in paths and orchard; dig roots as needed</td></tr>
+          <tr><td><strong>Horsetail</strong></td><td>Silica, calcium</td><td>Compost tea or dried mulch for fungal-prone plants</td></tr>
+          <tr><td><strong>Borage</strong></td><td>Potassium, calcium</td><td>Annual that self-seeds; edible blue flowers; repels tomato hornworm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Pest Control Through Planting</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pest</th><th>Repellent Plants</th></tr></thead>
+        <tbody>
+          <tr><td>Aphids</td><td>Chives, garlic, marigold, nasturtium (trap crop)</td></tr>
+          <tr><td>Carrot fly</td><td>Rosemary, sage, chives, onions — interplant with carrots</td></tr>
+          <tr><td>Cabbage moth / butterfly</td><td>Sage, thyme, mint, dill</td></tr>
+          <tr><td>Colorado potato beetle</td><td>Horseradish, tansy, marigold</td></tr>
+          <tr><td>Squash vine borer</td><td>Nasturtium; blue hubbard squash as sacrificial trap crop</td></tr>
+          <tr><td>Japanese beetle</td><td>Garlic, chives, rue</td></tr>
+          <tr><td>Deer</td><td>Daffodil ring border, lavender, sage, yarrow</td></tr>
+          <tr><td>Voles / moles</td><td>Daffodil bulb border rings around all beds</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Beneficial Insect Attractors</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Beneficial Insect</th><th>Plants That Attract It</th></tr></thead>
+        <tbody>
+          <tr><td>Honeybees</td><td>Borage, phacelia, clover, lavender, fruit tree bloom</td></tr>
+          <tr><td>Predatory wasps</td><td>Yarrow, dill, fennel (isolated), carrot flower, angelica</td></tr>
+          <tr><td>Lacewings</td><td>Angelica, dill, coriander (let bolt)</td></tr>
+          <tr><td>Ground beetles</td><td>Dense ground cover; mulch; clover paths</td></tr>
+          <tr><td>Hoverflies</td><td>Phacelia, sweet alyssum, marigold, borage</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes
+  </footer>
+
+</div>
+
+<script>
+function filterCompanions() {
+  const search = document.getElementById('search-companions').value.toLowerCase();
+  // Search all table rows across the whole page
+  document.querySelectorAll('table tbody tr:not(.category-row)').forEach(row => {
+    row.classList.toggle('hidden', search && !row.textContent.toLowerCase().includes(search));
+  });
+  // Also show/hide guild cards
+  document.querySelectorAll('.guild-card').forEach(card => {
+    card.style.display = (search && !card.textContent.toLowerCase().includes(search)) ? 'none' : '';
+  });
+}
+</script>
+</body>
+</html>

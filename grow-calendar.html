@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow Calendar | Sustainability Garden Guide</title>
+    <meta name="description" content="Month-by-month planting and harvest calendar for all annual and perennial crops in the self-sufficiency guide. By Stax.">
+  <meta property="og:title" content="Grow Calendar">
+  <meta property="og:description" content="Month-by-month planting, transplanting, harvest, and preservation schedule for every crop in the guide — annuals and perennials.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+  <style>
+    .calendar-table td, .calendar-table th { min-width: 38px; }
+    .month-task { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .month-task h4 { color: var(--green-mid); margin-bottom: 0.5rem; }
+    [data-theme="dark"] .month-task h4 { color: #b8de88; }
+    [data-theme="dark"] .month-task ul li { color: #cce4a8; }
+    .month-task ul { margin: 0; padding-left: 1.2rem; font-family: var(--font-ui); font-size: 0.85rem; }
+    .month-task ul li { margin-bottom: 0.2rem; }
+    .month-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+    </div>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html">Home</a>
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html">Goal 3 — Perennial Garden</a>
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html" class="active">Grow Calendar</a>
+    <a href="companion-planting.html">Companion Planting</a>
+    <a href="resources.html">Soil, Seeds &amp; Animals</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Grow Calendar</h1>
+    <p class="page-intro">
+      Month-by-month planting and harvest schedule for all crops.
+      Baseline: USDA Zones 5–7. Adjust 2–4 weeks earlier for zones 8+, later for zones 3–4.
+    </p>
+
+    <div class="calendar-legend">
+      <span class="legend-item"><span class="legend-swatch cal-si">SI</span> Start Indoors</span>
+      <span class="legend-item"><span class="legend-swatch cal-ds">DS</span> Direct Sow</span>
+      <span class="legend-item"><span class="legend-swatch cal-tp">TP</span> Transplant</span>
+      <span class="legend-item"><span class="legend-swatch cal-h">H</span> Harvest</span>
+      <span class="legend-item"><span class="legend-swatch cal-p">P</span> Plant/Establish</span>
+      <span class="legend-item"><span class="legend-swatch cal-pr">PR</span> Preserve/Store</span>
+    </div>
+
+    <div class="filter-bar">
+      <label>Filter:</label>
+      <select id="cal-filter" onchange="filterCal()">
+        <option value="">All crops</option>
+        <option value="annual">Annuals only</option>
+        <option value="perennial">Perennials only</option>
+      </select>
+      <input type="text" id="cal-search" placeholder="Search crop name…" oninput="filterCal()">
+    </div>
+
+    <h2>Annual Crops</h2>
+    <div class="table-wrap">
+      <table class="calendar-table" id="cal-annual">
+        <thead>
+          <tr>
+            <th>Crop</th>
+            <th class="month-col">Jan</th><th class="month-col">Feb</th><th class="month-col">Mar</th>
+            <th class="month-col">Apr</th><th class="month-col">May</th><th class="month-col">Jun</th>
+            <th class="month-col">Jul</th><th class="month-col">Aug</th><th class="month-col">Sep</th>
+            <th class="month-col">Oct</th><th class="month-col">Nov</th><th class="month-col">Dec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-cal="annual"><td><strong>Potatoes</strong></td><td></td><td></td><td></td><td class="month-cell cal-p">P</td><td class="month-cell cal-p">P</td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Sweet Potatoes</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-tp">TP</td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Winter Squash</strong></td><td></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Dry Beans</strong></td><td></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Dry Peas</strong></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Corn (dent/flour)</strong></td><td></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-ds">DS</td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Grain Amaranth</strong></td><td></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Sunflower</strong></td><td></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-ds">DS</td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Flax</strong></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td></td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Soybeans</strong></td><td></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Quinoa</strong></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Kale</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td></tr>
+          <tr data-cal="annual"><td><strong>Spinach</strong></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Swiss Chard</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Collard Greens</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Lettuce</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Bok Choy</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Beets</strong></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Carrots</strong></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Turnips</strong></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Parsnips</strong></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Garlic</strong></td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td class="month-cell cal-p">P</td><td class="month-cell cal-p">P</td><td class="month-cell cal-p">P</td></tr>
+          <tr data-cal="annual"><td><strong>Onions</strong></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Tomatoes</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Peppers</strong></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-si">SI</td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Cucumbers</strong></td><td></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Zucchini</strong></td><td></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Peas (fresh)</strong></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Green Beans</strong></td><td></td><td></td><td></td><td></td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-ds">DS</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Broccoli</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Cabbage</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td></tr>
+          <tr data-cal="annual"><td><strong>Brussels Sprouts</strong></td><td></td><td></td><td class="month-cell cal-si">SI</td><td class="month-cell cal-si">SI</td><td class="month-cell cal-tp">TP</td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Perennial Crops</h2>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
+      Already in the ground after year one. Calendar shows annual harvest windows.
+    </p>
+    <div class="table-wrap">
+      <table class="calendar-table" id="cal-perennial">
+        <thead>
+          <tr>
+            <th>Crop</th>
+            <th class="month-col">Jan</th><th class="month-col">Feb</th><th class="month-col">Mar</th>
+            <th class="month-col">Apr</th><th class="month-col">May</th><th class="month-col">Jun</th>
+            <th class="month-col">Jul</th><th class="month-col">Aug</th><th class="month-col">Sep</th>
+            <th class="month-col">Oct</th><th class="month-col">Nov</th><th class="month-col">Dec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-cal="perennial"><td><strong>Asparagus</strong></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Rhubarb</strong></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Sorrel</strong></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Chives</strong></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Good King Henry</strong></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Perennial Kale</strong></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td></tr>
+          <tr data-cal="perennial"><td><strong>Walking Onions</strong></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Sea Kale</strong></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Ostrich Fern (fiddleheads)</strong></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Ramps / Wild Leek</strong></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Jerusalem Artichoke</strong></td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td></tr>
+          <tr data-cal="perennial"><td><strong>Horseradish</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Skirret</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Scorzonera</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Globe Artichoke</strong></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Yacon</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Strawberries</strong></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Serviceberry</strong></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Cornelian Cherry</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Mulberry</strong></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Gooseberry</strong></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Red Currant</strong></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Black Currant</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Raspberries</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Blueberry</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Goji Berry</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Elderberry</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Sea Buckthorn</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Aronia / Chokeberry</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Rugosa Rose (hips)</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Grapes</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Hardy Kiwi</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Pawpaw</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Persimmon</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Apple</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Pear</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Plum</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Sour Cherry</strong></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Apricot</strong></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Hazelnut</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Chestnut</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Walnut</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td><td></td></tr>
+          <tr data-cal="perennial"><td><strong>Pecan</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="month-cell cal-h">H</td><td class="month-cell cal-h">H</td><td class="month-cell cal-pr">PR</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Monthly Task Summary</h2>
+    <div class="month-grid">
+      <div class="month-task"><h4>January – February</h4><ul><li>Order seeds and bare-root stock</li><li>Start peppers and eggplant indoors (late Feb)</li><li>Prune dormant fruit trees and grape vines</li><li>Check root cellar; use oldest stores first</li></ul></div>
+      <div class="month-task"><h4>March</h4><ul><li>Start onions, leeks, kale, broccoli, cabbage indoors</li><li>Direct sow spinach, arugula, peas, parsnips outdoors</li><li>Harvest ramps and ostrich fern fiddleheads</li><li>Divide chives, sorrel, walking onions</li><li>Apply compost to all perennial beds</li></ul></div>
+      <div class="month-task"><h4>April</h4><ul><li>Transplant onions, kale, broccoli outdoors</li><li>Start tomatoes, peppers, squash indoors</li><li>Direct sow beets, carrots, turnips, radishes</li><li>Plant potatoes</li><li>Asparagus harvest begins; rhubarb; sorrel</li></ul></div>
+      <div class="month-task"><h4>May</h4><ul><li>Transplant tomatoes, peppers, squash after last frost</li><li>Direct sow beans, corn, zucchini, cucumbers</li><li>Asparagus harvest (6–8 weeks total)</li><li>Serviceberry and cherry begin to ripen (late May)</li></ul></div>
+      <div class="month-task"><h4>June</h4><ul><li>Asparagus season ends; let fern grow</li><li>Harvest: strawberries, gooseberry, currant, mulberry, cherry, apricot</li><li>Begin harvesting zucchini, peas, lettuce</li><li>Ferment first sauerkraut batches</li></ul></div>
+      <div class="month-task"><h4>July</h4><ul><li>Peak summer harvest: tomatoes, peppers, cucumbers, beans</li><li>Harvest: black currant, cornelian cherry, blueberry, raspberry</li><li>Harvest garlic when tops die back</li><li>Can tomatoes; pickle cucumbers; dry peppers</li></ul></div>
+      <div class="month-task"><h4>August</h4><ul><li>Harvest: winter squash, dry beans, pumpkins</li><li>Harvest: elderberry, sea buckthorn, aronia, hazelnut begins</li><li>Plant fall brassicas: kale, chard, bok choy, broccoli, cabbage</li><li>Elderberry syrup; sea buckthorn juice</li></ul></div>
+      <div class="month-task"><h4>September</h4><ul><li>Harvest: chestnuts, walnuts, apples, late pears</li><li>Harvest: Jerusalem artichoke, horseradish begin</li><li>Harvest: hardy kiwi, rugosa rose hips, grapes</li><li>Fill root cellar; plant garlic for next year</li></ul></div>
+      <div class="month-task"><h4>October</h4><ul><li>Final harvest: pecans, late apples, persimmons begin</li><li>Harvest rutabaga, leeks, Brussels sprouts (sweeter after frost)</li><li>Root cellar fully stocked</li><li>Apply thick mulch to all perennial beds before freeze</li></ul></div>
+      <div class="month-task"><h4>November – December</h4><ul><li>Harvest: persimmons, Brussels sprouts, leeks, frost-sweetened kale</li><li>Jerusalem artichokes through winter as needed</li><li>Review the year: what yielded, what failed</li><li>Order seed catalogs; plan next year's layout</li></ul></div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes
+  </footer>
+
+</div>
+
+<script>
+function filterCal() {
+  const filter = document.getElementById('cal-filter').value;
+  const search = document.getElementById('cal-search').value.toLowerCase();
+  document.querySelectorAll('[data-cal]').forEach(row => {
+    const typeMatch = !filter || row.dataset.cal === filter;
+    const searchMatch = !search || row.textContent.toLowerCase().includes(search);
+    row.classList.toggle('hidden', !(typeMatch && searchMatch));
+  });
+}
+</script>
+</body>
+</html>

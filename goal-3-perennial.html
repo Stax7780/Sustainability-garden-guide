@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goal 3 — Perennial Garden Plan | Sustainability Garden Guide</title>
+    <meta name="description" content="Plant once, harvest for decades. Full perennial food forest plan using heirloom trees, shrubs, and perennial vegetables for two people. By Stax.">
+  <meta property="og:title" content="Goal 3 — Perennial Garden Plan">
+  <meta property="og:description" content="One-time-plant system for full self-sufficiency — nut trees, fruit trees, berry shrubs, and perennial vegetables using legacy and heirloom varieties.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+    </div>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html">Home</a>
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html" class="active">Goal 3 — Perennial Garden</a>
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html">Grow Calendar</a>
+    <a href="companion-planting.html">Companion Planting</a>
+    <a href="resources.html">Soil, Seeds &amp; Animals</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Goal 3 — Perennial Garden Plan</h1>
+    <p class="page-intro">
+      Plant once. Harvest for decades. Every plant here regrows on its own — no annual replanting.
+      Priority given to heirloom, legacy, and open-pollinated varieties with the highest known
+      nutrient density. Build this system alongside the annual garden while trees establish.
+    </p>
+
+    <div class="filter-bar">
+      <label>Filter by type:</label>
+      <select id="filter-type" onchange="filterPerennial()">
+        <option value="">All</option>
+        <option value="tree">Trees</option>
+        <option value="shrub">Shrubs</option>
+        <option value="vegetable">Perennial Vegetables</option>
+        <option value="fruit">Fruit Trees</option>
+        <option value="vine">Vines</option>
+        <option value="groundcover">Ground Cover</option>
+      </select>
+      <label>Search:</label>
+      <input type="text" id="search-perennial" placeholder="e.g. protein, vitamin C, walnut…" oninput="filterPerennial()">
+    </div>
+    <p class="filter-note">Filter by plant type or search by name, nutrient, or keyword.</p>
+
+    <h2>Trees — Long-Term Calorie and Protein Anchors</h2>
+    <p>Plant first. Most produce in 3–7 years and yield for 50–200+ years.</p>
+    <div class="table-wrap">
+      <table id="perennial-table">
+        <thead>
+          <tr>
+            <th>Plant</th>
+            <th>Heirloom / Variety</th>
+            <th>Years to Produce</th>
+            <th>Mature Yield</th>
+            <th>Primary Nutrients</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-type="tree" data-nutrients="carbs protein vitamin-c manganese">
+            <td><strong>American Chestnut</strong><br><small>Castanea dentata</small></td>
+            <td>TACF restoration hybrids</td>
+            <td>3 – 5 yrs</td>
+            <td>25 – 50 lbs/tree</td>
+            <td><span class="badge badge-orange">Carbs</span> <span class="badge badge-blue">Protein</span></td>
+            <td>Original staple grain of Eastern US; high sugar, low fat nut</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="carbs protein vitamin-c manganese">
+            <td><strong>Chinese Chestnut</strong><br><small>Castanea mollissima</small></td>
+            <td>Sleeping Giant, Layeroka</td>
+            <td>3 – 5 yrs</td>
+            <td>25 – 60 lbs/tree</td>
+            <td><span class="badge badge-orange">Carbs</span> <span class="badge badge-blue">Protein</span> Vitamin C</td>
+            <td>Blight-resistant; productive and reliable</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="fat protein omega3 magnesium">
+            <td><strong>Black Walnut</strong><br><small>Juglans nigra</small></td>
+            <td>Thomas, Sparrow</td>
+            <td>6 – 10 yrs</td>
+            <td>50 – 100 lbs in-shell</td>
+            <td><span class="badge badge-purple">Fat</span> <span class="badge badge-blue">Protein</span> Omega-3</td>
+            <td>High kernel ratio; allelopathic — keep away from veg beds</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="fat protein omega3">
+            <td><strong>Butternut / White Walnut</strong><br><small>Juglans cinerea</small></td>
+            <td>Chamberlin (disease-resistant)</td>
+            <td>4 – 6 yrs</td>
+            <td>30 – 60 lbs</td>
+            <td><span class="badge badge-purple">Fat</span> <span class="badge badge-blue">Protein</span> Omega-3</td>
+            <td>Higher omega-3 than English walnut; cold-hardy to zone 3</td>
+          </tr>
+          <tr data-type="tree shrub" data-nutrients="fat protein vitamin-e manganese">
+            <td><strong>Hazelnut / Filbert</strong><br><small>Corylus americana × avellana</small></td>
+            <td>Jefferson, Wepster</td>
+            <td>2 – 4 yrs</td>
+            <td>10 – 25 lbs/bush</td>
+            <td><span class="badge badge-purple">Fat</span> <span class="badge badge-blue">Protein</span> Vitamin E</td>
+            <td>Fastest-bearing nut; blight-resistant; zone 4+</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="fat protein manganese thiamine">
+            <td><strong>Shagbark Hickory</strong><br><small>Carya ovata</small></td>
+            <td>Select for large nut size</td>
+            <td>7 – 15 yrs</td>
+            <td>25 – 75 lbs/tree</td>
+            <td><span class="badge badge-purple">Fat</span> <span class="badge badge-blue">Protein</span> Manganese</td>
+            <td>Native; very long-lived; rich buttery flavor</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="fat protein zinc magnesium">
+            <td><strong>Pecan</strong><br><small>Carya illinoinensis</small></td>
+            <td>Hark, Major (northern-hardy)</td>
+            <td>6 – 10 yrs</td>
+            <td>50 – 100 lbs/tree</td>
+            <td><span class="badge badge-purple">Fat</span> <span class="badge badge-blue">Protein</span> Zinc</td>
+            <td>Zone 6+; very productive at maturity</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="fat protein omega3 copper">
+            <td><strong>English / Carpathian Walnut</strong><br><small>Juglans regia</small></td>
+            <td>Broadview, Carpathian</td>
+            <td>4 – 6 yrs</td>
+            <td>50 – 150 lbs/tree</td>
+            <td><span class="badge badge-purple">Fat</span> <span class="badge badge-blue">Protein</span> Omega-3</td>
+            <td>Cold-hardy to zone 5; highest yield of walnuts</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="iron vitamin-c vitamin-k">
+            <td><strong>Mulberry</strong><br><small>Morus rubra / alba</small></td>
+            <td>Illinois Everbearing</td>
+            <td>2 – 4 yrs</td>
+            <td>20 – 50 lbs/tree</td>
+            <td>Iron, Vitamin C, K, Resveratrol</td>
+            <td>Long harvest window; very productive; zone 5+</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="vitamin-a vitamin-c manganese fiber">
+            <td><strong>Persimmon</strong><br><small>Diospyros virginiana</small></td>
+            <td>Meader, Early Golden</td>
+            <td>4 – 7 yrs</td>
+            <td>50 – 100 lbs/tree</td>
+            <td><span class="badge badge-green">Vitamin A</span> C, Manganese, Fiber</td>
+            <td>Native; cold-hardy; harvest after first frost</td>
+          </tr>
+          <tr data-type="tree" data-nutrients="vitamin-c iron manganese riboflavin">
+            <td><strong>Pawpaw</strong><br><small>Asimina triloba</small></td>
+            <td>Shenandoah, Susquehanna</td>
+            <td>3 – 5 yrs</td>
+            <td>20 – 50 lbs/tree</td>
+            <td>Vitamin C, Iron, Manganese, Riboflavin</td>
+            <td>Native; largest edible fruit in North America; shade-tolerant when young</td>
+          </tr>
+          <tr data-type="tree shrub" data-nutrients="vitamin-c anthocyanins">
+            <td><strong>Cornelian Cherry</strong><br><small>Cornus mas</small></td>
+            <td>Standard species</td>
+            <td>3 – 5 yrs</td>
+            <td>15 – 25 lbs/tree</td>
+            <td><span class="badge badge-green">Vitamin C ×4</span> Anthocyanins</td>
+            <td>4× more vitamin C than oranges; extremely cold-hardy to zone 4</td>
+          </tr>
+          <tr data-type="tree shrub" data-nutrients="vitamin-c iron anthocyanins">
+            <td><strong>Elderberry</strong><br><small>Sambucus canadensis</small></td>
+            <td>Bob Gordon, Adams</td>
+            <td>2 – 3 yrs</td>
+            <td>12 – 20 lbs/bush</td>
+            <td>Vitamin C, Iron, Anthocyanins</td>
+            <td>Immune-boosting; cook before eating; fast-establishing</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="6">Shrubs — Mid-Layer Nutrition</td></tr>
+          <tr data-type="shrub" data-nutrients="protein nitrogen-fixing">
+            <td><strong>Siberian Pea Shrub</strong><br><small>Caragana arborescens</small></td>
+            <td>Standard species</td>
+            <td>2 – 3 yrs</td>
+            <td>Continuous</td>
+            <td><span class="badge badge-blue">36% Protein seeds</span> Nitrogen-fixing</td>
+            <td>Hardy to -40°F; windbreak; young shoots edible in spring; fixes 70–100 lbs N/acre/yr</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="vitamin-a vitamin-c vitamin-k">
+            <td><strong>Sea Kale</strong><br><small>Crambe maritima</small></td>
+            <td>Heritage coastal vegetable</td>
+            <td>2 – 3 yrs</td>
+            <td>10–15 years production</td>
+            <td><span class="badge badge-green">A, C, K</span></td>
+            <td>3-way harvest: shoots (asparagus-like), leaves, flower buds; poor soil tolerant</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="vitamin-c potassium fiber">
+            <td><strong>Gooseberry</strong><br><small>Ribes uva-crispa</small></td>
+            <td>Invicta, Pixwell</td>
+            <td>1 – 2 yrs</td>
+            <td>15 – 20 years</td>
+            <td>Vitamin C, Potassium, Fiber</td>
+            <td>Mildew-resistant; shade-tolerant; productive</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="vitamin-c anthocyanins iron">
+            <td><strong>Black Currant</strong><br><small>Ribes nigrum</small></td>
+            <td>Ben Sarek, Consort</td>
+            <td>1 – 2 yrs</td>
+            <td>20 years</td>
+            <td><span class="badge badge-green">Vitamin C ×4</span> Anthocyanins, Iron</td>
+            <td>4× vitamin C of orange; highest antioxidant of common currants</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="vitamin-c vitamin-k potassium">
+            <td><strong>Red / White Currant</strong><br><small>Ribes rubrum</small></td>
+            <td>Jonkheer Van Tets, White Imperial</td>
+            <td>1 – 2 yrs</td>
+            <td>20 years</td>
+            <td>Vitamin C, K, Potassium</td>
+            <td>Prolific; tolerates partial shade</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="iron copper vitamin-c">
+            <td><strong>Serviceberry / Juneberry</strong><br><small>Amelanchier spp.</small></td>
+            <td>Thiessen, Smoky</td>
+            <td>2 – 3 yrs</td>
+            <td>30+ years</td>
+            <td><span class="badge badge-red">Iron ★</span> Copper, Vitamin C</td>
+            <td>Highest iron of any berry; first fruit of summer; native</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="vitamin-c omega7 lycopene">
+            <td><strong>Sea Buckthorn</strong><br><small>Hippophae rhamnoides</small></td>
+            <td>Indian Summer, Leikora (female)</td>
+            <td>3 – 4 yrs</td>
+            <td>30+ years</td>
+            <td><span class="badge badge-green">Vitamin C ×13</span> Omega-7</td>
+            <td>695 mg vitamin C per 100g (vs 53 mg in orange); need male + female plant</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="antioxidant vitamin-k vitamin-c">
+            <td><strong>Aronia / Chokeberry</strong><br><small>Aronia melanocarpa</small></td>
+            <td>Viking, Nero</td>
+            <td>2 – 3 yrs</td>
+            <td>20+ years</td>
+            <td><span class="badge badge-red">Highest antioxidant berry</span> Vitamin K, C</td>
+            <td>Highest ORAC score of any berry; tart; blend with other fruit</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="vitamin-c vitamin-k anthocyanins">
+            <td><strong>Rugosa Rose</strong><br><small>Rosa rugosa</small></td>
+            <td>Hansa, Therese Bugnet</td>
+            <td>1 – 2 yrs</td>
+            <td>30+ years</td>
+            <td><span class="badge badge-green">Vitamin C ×20</span> (in hips) Vitamin K</td>
+            <td>20× vitamin C of orange in rosehips; harvest hips after first frost; deer-resistant</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="vitamin-a vitamin-c iron zeaxanthin">
+            <td><strong>Goji Berry</strong><br><small>Lycium barbarum</small></td>
+            <td>Crimson Star</td>
+            <td>2 – 3 yrs</td>
+            <td>30+ years</td>
+            <td><span class="badge badge-green">Vitamin A</span> C, Iron, Zeaxanthin</td>
+            <td>Long harvest window; drought-tolerant; eye-health antioxidants</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="antioxidant vitamin-c vitamin-k">
+            <td><strong>Blueberry</strong><br><small>Vaccinium corymbosum</small></td>
+            <td>Bluecrop, Patriot (zone 4)</td>
+            <td>3 – 4 yrs</td>
+            <td>20+ years</td>
+            <td>Antioxidants, Vitamin C, K</td>
+            <td>Requires acidic soil (pH 4.5–5.5); plant 2 varieties for cross-pollination</td>
+          </tr>
+          <tr data-type="shrub" data-nutrients="antioxidant vitamin-c">
+            <td><strong>Raspberry</strong><br><small>Rubus idaeus</small></td>
+            <td>Heritage, Latham (heirloom)</td>
+            <td>1 – 2 yrs</td>
+            <td>Perennial root, biennial canes</td>
+            <td>Antioxidants, Vitamin C</td>
+            <td>Produces annually; remove old canes after fruiting</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="6">Perennial Vegetables — Ground Layer</td></tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-a vitamin-c vitamin-k folate">
+            <td><strong>Asparagus</strong></td>
+            <td>Mary Washington (heirloom), Purple Passion</td>
+            <td>3 yrs to establish</td>
+            <td>15 – 25 years</td>
+            <td><span class="badge badge-green">A, C, K</span> Folate</td>
+            <td>First green of spring; 6–8 week harvest window; 10–20 lbs/10×4 ft bed</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-k calcium antioxidant">
+            <td><strong>Rhubarb</strong></td>
+            <td>Victoria (heirloom), Glaskin's Perpetual</td>
+            <td>2 yrs</td>
+            <td>20+ years</td>
+            <td>Vitamin K, Calcium, Antioxidants</td>
+            <td>5–10 lbs stalks/plant/year; giant leaves = natural mulch; zone 3+</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="inulin fiber carbs">
+            <td><strong>Jerusalem Artichoke / Sunchoke</strong><br><small>Helianthus tuberosus</small></td>
+            <td>Stampede (compact)</td>
+            <td>First fall</td>
+            <td>Indefinite</td>
+            <td>Inulin (prebiotic fiber), Calorie-dense</td>
+            <td>Spreads aggressively — contain with barriers; harvest tubers fall through winter</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-a vitamin-c calcium iron">
+            <td><strong>Good King Henry</strong><br><small>Chenopodium bonus-henricus</small></td>
+            <td>Ancient European potherb</td>
+            <td>Year 1</td>
+            <td>5 – 10 years</td>
+            <td><span class="badge badge-green">A, C</span> Calcium, Iron</td>
+            <td>Outperforms spinach in yield; doesn't bolt; zone 3+</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="sulfur vitamin-k vitamin-c immune">
+            <td><strong>Egyptian Walking Onions</strong></td>
+            <td>Self-propagating; never buy again</td>
+            <td>Year 1</td>
+            <td>Indefinite</td>
+            <td>Sulfur compounds, Immune-boosting, Vitamin C</td>
+            <td>Self-walks across garden; greens year-round + bulblets in summer; zone 3+</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="sulfur vitamin-k vitamin-c">
+            <td><strong>Chives + Garlic Chives</strong></td>
+            <td>Common + Allium tuberosum</td>
+            <td>Year 1</td>
+            <td>Indefinite</td>
+            <td>Sulfur compounds, Vitamins K and C</td>
+            <td>Repel pests; edible flowers; spring through fall; zone 3+</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-a vitamin-c vitamin-k calcium iron">
+            <td><strong>Perennial Kale / Tree Collards</strong></td>
+            <td>Daubenton's Kale (heirloom French)</td>
+            <td>Year 1</td>
+            <td>5 – 10 years</td>
+            <td><span class="badge badge-green">A, C, K</span> Calcium, Iron</td>
+            <td>Year-round harvest without bolting; 30–40% more calcium than annual kale</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-c iron potassium">
+            <td><strong>Sorrel</strong><br><small>Rumex acetosa</small></td>
+            <td>Broad-leaf French Sorrel (heirloom)</td>
+            <td>Year 1</td>
+            <td>10+ years</td>
+            <td>Vitamin C, Iron, Potassium</td>
+            <td>First edible of spring; lemon-tart flavor; raw in salads</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="flavonoids vitamin-c">
+            <td><strong>Lovage</strong><br><small>Levisticum officinale</small></td>
+            <td>Heirloom European</td>
+            <td>Year 1</td>
+            <td>10+ years</td>
+            <td>Flavonoids, Vitamin C</td>
+            <td>Celery-like flavor; grows 6 ft tall; use leaves, seeds, and stems</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-c antioxidant glucosinolates">
+            <td><strong>Horseradish</strong></td>
+            <td>Maliner Kren (heirloom)</td>
+            <td>Year 2 (roots)</td>
+            <td>Indefinite</td>
+            <td>Vitamin C, Antioxidants, Glucosinolates</td>
+            <td>Easiest perennial to grow; leave small roots to regrow each year</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-a vitamin-c">
+            <td><strong>Ostrich Fern (Fiddleheads)</strong><br><small>Matteuccia struthiopteris</small></td>
+            <td>Native North American</td>
+            <td>Year 2</td>
+            <td>Indefinite</td>
+            <td>Vitamin A, C</td>
+            <td>Harvest when 2–6" tall in spring; cook 10+ min; shade-tolerant</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="vitamin-a vitamin-c sulfur">
+            <td><strong>Ramps / Wild Leek</strong><br><small>Allium tricoccum</small></td>
+            <td>Native; grow under deciduous trees</td>
+            <td>3 – 5 yrs</td>
+            <td>Indefinite</td>
+            <td>Vitamin A, C, Sulfur compounds</td>
+            <td>Shade-tolerant; takes patience to establish; worth it for early spring harvest</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="inulin fiber vitamin-c">
+            <td><strong>Skirret</strong><br><small>Sium sisarum</small></td>
+            <td>Ancient Roman root vegetable</td>
+            <td>Year 1</td>
+            <td>5 – 10 years</td>
+            <td>Inulin, Fiber, Vitamin C</td>
+            <td>Sweet parsnip-like roots; harvest fall/winter; nearly forgotten heirloom</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="inulin iron calcium">
+            <td><strong>Scorzonera</strong><br><small>Scorzonera hispanica</small></td>
+            <td>Heirloom; grown since 1500s</td>
+            <td>Year 1</td>
+            <td>Perennial</td>
+            <td>Inulin, Iron, Calcium</td>
+            <td>Black-skinned root; harvest fall/winter; leave to flower and self-seed</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="antioxidant fiber folate">
+            <td><strong>Globe Artichoke</strong><br><small>Cynara cardunculus</small></td>
+            <td>Green Globe (heirloom)</td>
+            <td>Year 2</td>
+            <td>5 – 10 years</td>
+            <td>Antioxidants, Fiber, Folate</td>
+            <td>Zone 6+ with mulch; best zone 7–10; liver-supporting cynarin compound</td>
+          </tr>
+          <tr data-type="vegetable" data-nutrients="inulin carbs fiber">
+            <td><strong>Yacon</strong><br><small>Smallanthus sonchifolius</small></td>
+            <td>Andean origin</td>
+            <td>First fall</td>
+            <td>Perennial zone 7+</td>
+            <td>Inulin (prebiotic), Blood sugar regulation</td>
+            <td>Fruity; often eaten raw; harvest after flowers die back; plants reach 6.5 ft</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="6">Fruit Trees</td></tr>
+          <tr data-type="fruit" data-nutrients="fiber vitamin-c quercetin">
+            <td><strong>Apple</strong></td>
+            <td>Cox's Orange Pippin, Roxbury Russet, Newtown Pippin, Golden Russet</td>
+            <td>4 – 6 yrs</td>
+            <td>100 – 400 lbs/tree</td>
+            <td>Fiber, Vitamin C, Quercetin</td>
+            <td>All heirloom; higher nutrient density than commercial varieties</td>
+          </tr>
+          <tr data-type="fruit" data-nutrients="fiber vitamin-c copper">
+            <td><strong>Pear</strong></td>
+            <td>Seckel (oldest American pear), Bosc, Comice</td>
+            <td>4 – 6 yrs</td>
+            <td>50 – 200 lbs/tree</td>
+            <td>Fiber, Vitamin C, Copper</td>
+            <td>Seckel: tiny, very sweet, high antioxidants</td>
+          </tr>
+          <tr data-type="fruit" data-nutrients="vitamin-c vitamin-k anthocyanins">
+            <td><strong>Plum</strong></td>
+            <td>Damson (ancient European), Green Gage, Italian Prune</td>
+            <td>3 – 5 yrs</td>
+            <td>50 – 150 lbs/tree</td>
+            <td>Vitamin C, K, Antioxidants</td>
+            <td>Damson: very high antioxidants; makes excellent preserves</td>
+          </tr>
+          <tr data-type="fruit" data-nutrients="melatonin anthocyanins anti-inflammatory">
+            <td><strong>Sour Cherry</strong></td>
+            <td>Montmorency (heirloom), Morello</td>
+            <td>3 – 5 yrs</td>
+            <td>30 – 100 lbs/tree</td>
+            <td>Melatonin, Anti-inflammatory anthocyanins</td>
+            <td>Self-fertile; more cold-hardy than sweet cherry; excellent for preserving</td>
+          </tr>
+          <tr data-type="fruit" data-nutrients="vitamin-a vitamin-c potassium">
+            <td><strong>Apricot</strong></td>
+            <td>Moorpark (heirloom), Goldcot</td>
+            <td>3 – 4 yrs</td>
+            <td>50 – 150 lbs/tree</td>
+            <td><span class="badge badge-green">Vitamin A ★</span> C, Potassium</td>
+            <td>Very high vitamin A; dry for long-term storage</td>
+          </tr>
+          <tr data-type="fruit" data-nutrients="calcium iron potassium fiber">
+            <td><strong>Fig</strong></td>
+            <td>Brown Turkey, Celeste (heirloom)</td>
+            <td>2 – 4 yrs</td>
+            <td>20 – 60 lbs/tree</td>
+            <td>Calcium, Iron, Potassium, Fiber</td>
+            <td>Zone 7+ in-ground; zone 5–6 in container; dry for storage</td>
+          </tr>
+          <tr data-type="fruit" data-nutrients="vitamin-c fiber pectin">
+            <td><strong>Quince</strong></td>
+            <td>Pineapple, Champion (heirloom)</td>
+            <td>4 – 6 yrs</td>
+            <td>50 – 150 lbs/tree</td>
+            <td>Vitamin C, Fiber, Pectin</td>
+            <td>Not eaten raw; essential for preserving (pectin source); very cold-hardy</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="6">Vines</td></tr>
+          <tr data-type="vine" data-nutrients="resveratrol polyphenols vitamin-c">
+            <td><strong>Grape</strong><br><small>Vitis spp.</small></td>
+            <td>Concord (native), Niagara, Norton (oldest American)</td>
+            <td>3 – 4 yrs</td>
+            <td>30 – 60 lbs/vine</td>
+            <td>Resveratrol, Polyphenols, Vitamin C</td>
+            <td>30–60 year lifespan; annual pruning required; juice, jam, wine, raisins</td>
+          </tr>
+          <tr data-type="vine" data-nutrients="vitamin-c vitamin-e potassium">
+            <td><strong>Hardy Kiwi</strong><br><small>Actinidia arguta</small></td>
+            <td>Issai (self-fertile), Ken's Red</td>
+            <td>3 – 5 yrs</td>
+            <td>50 – 100 lbs/vine</td>
+            <td><span class="badge badge-green">Vitamin C ×3</span> Vitamin E, Potassium</td>
+            <td>3× vitamin C of orange; grape-sized; no peeling needed; zone 4+</td>
+          </tr>
+          <tr data-type="vine" data-nutrients="protein nitrogen-fixing inulin">
+            <td><strong>American Groundnut</strong><br><small>Apios americana</small></td>
+            <td>Native vine</td>
+            <td>Year 2 (tubers)</td>
+            <td>Indefinite</td>
+            <td><span class="badge badge-blue">15–17% Protein</span> Nitrogen-fixing</td>
+            <td>Highest protein root crop; nitrogen-fixing; native; stores in ground all winter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Heirloom vs. Modern — Why It Matters</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Heirloom Variety</th><th>Modern Equivalent</th><th>Advantage</th></tr></thead>
+        <tbody>
+          <tr><td>Daubenton's Kale (perennial)</td><td>Curly kale</td><td>30–40% more calcium; year-round harvest without bolting</td></tr>
+          <tr><td>Siberian Pea Shrub seeds</td><td>Garden pea</td><td>36% protein vs. 5%; grows on marginal soil; nitrogen-fixing</td></tr>
+          <tr><td>American Groundnut (Apios)</td><td>Potato</td><td>15–17% protein vs. 2%; nitrogen-fixing; stores in ground</td></tr>
+          <tr><td>Cornelian Cherry</td><td>Orange</td><td>4× the vitamin C; extremely cold-hardy; disease-free</td></tr>
+          <tr><td>Sea Buckthorn</td><td>Orange</td><td>695 mg vitamin C / 100g vs. 53 mg; adds omega-7 fatty acids</td></tr>
+          <tr><td>Black Currant (Consort)</td><td>Red grape</td><td>3–4× more vitamin C; high iron; easy to grow</td></tr>
+          <tr><td>Aronia / Chokeberry</td><td>Blueberry</td><td>3–5× more antioxidants (ORAC score)</td></tr>
+          <tr><td>Rugosa Rose hips</td><td>Vitamin C tablet</td><td>20× more vitamin C than orange; free from garden every fall</td></tr>
+          <tr><td>American Chestnut (restoration)</td><td>White potato</td><td>Higher starch + protein; perennial — plant once, harvest forever</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Zone Map and Planting Timeline</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year 1</th><th>Year 2–3</th><th>Year 4–7</th><th>Year 8+</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Asparagus crowns<br>Rhubarb crowns<br>Walking onions<br>Sunchokes<br>Chives, sorrel<br>Nut tree seedlings</td>
+            <td>Berry bushes producing<br>Fruit trees established<br>Pea shrub established<br>Sea kale producing<br>Mulberries producing<br>Hazelnut first nuts</td>
+            <td>Hazelnuts fully producing<br>Fruit trees producing<br>Pawpaw producing<br>Chestnuts producing<br>Perennial veg mature</td>
+            <td>Nut trees producing<br>Legacy system mature<br>Minimal maintenance<br>Self-sustaining fertility</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box">
+      <strong>Remaining nutrient gaps:</strong>
+      Vitamin B12 (4–6 chickens covers this entirely via daily eggs) ·
+      Iodine (iodized salt or 1 tsp kelp/week) ·
+      Selenium (1–2 Brazil nuts per person per day) ·
+      EPA/DHA omega-3 (pasture eggs or a small fish pond).
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes
+  </footer>
+
+</div>
+
+<script>
+function filterPerennial() {
+  const type = document.getElementById('filter-type').value.toLowerCase();
+  const search = document.getElementById('search-perennial').value.toLowerCase();
+  const rows = document.querySelectorAll('#perennial-table tbody tr:not(.category-row)');
+  rows.forEach(row => {
+    const rowType = (row.dataset.type || '').toLowerCase();
+    const rowText = row.textContent.toLowerCase();
+    const typeMatch = !type || rowType.includes(type);
+    const searchMatch = !search || rowText.includes(search);
+    row.classList.toggle('hidden', !(typeMatch && searchMatch));
+  });
+}
+</script>
+</body>
+</html>

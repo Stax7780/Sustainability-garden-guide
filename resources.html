@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Crop Rotation, Seed Saving, Soil, Animals | Sustainability Garden Guide</title>
+  <meta name="description" content="Crop rotation plan, seed saving guide, succession planting, soil building, and animal integration for full self-sufficiency. By Stax.">
+  <meta property="og:title" content="Resources — Complete Self-Sufficiency Guide">
+  <meta property="og:description" content="Crop rotation, seed saving, succession planting, soil building, and animal integration to close the loop on full food self-sufficiency.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+    </div>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html">Home</a>
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html">Goal 3 — Perennial Garden</a>
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html">Grow Calendar</a>
+    <a href="companion-planting.html">Companion Planting</a>
+    <a href="resources.html" class="active">Soil, Seeds & Animals</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Soil, Seeds &amp; Animals</h1>
+    <p class="page-intro">
+      The three systems that close the loop — rotating crops so the soil stays healthy,
+      saving seeds so you never buy again, and integrating animals to fill the nutritional
+      gaps no garden can cover on its own.
+    </p>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CROP ROTATION
+    ═══════════════════════════════════════════════════════════════ -->
+    <h2>Crop Rotation</h2>
+    <p>
+      Never plant the same family in the same bed two years in a row. Rotation prevents
+      disease buildup, balances soil nutrients, and breaks pest cycles naturally.
+      Follow this 4-year plan for every annual bed.
+    </p>
+
+    <h3>The 4-Year Rotation Cycle</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Year</th><th>Family</th><th>Crops</th><th>Effect on Soil</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Year 1</strong></td>
+            <td>Legumes</td>
+            <td>Beans, peas, soybeans, peanuts</td>
+            <td><span class="badge badge-green">Adds nitrogen</span> — fixes N from air into soil for next crop</td>
+          </tr>
+          <tr>
+            <td><strong>Year 2</strong></td>
+            <td>Brassicas</td>
+            <td>Kale, cabbage, broccoli, Brussels sprouts, cauliflower, turnips</td>
+            <td><span class="badge badge-blue">Uses nitrogen</span> — hungry feeders that thrive on legume leftovers</td>
+          </tr>
+          <tr>
+            <td><strong>Year 3</strong></td>
+            <td>Roots &amp; Alliums</td>
+            <td>Carrots, beets, parsnips, onions, garlic, leeks</td>
+            <td><span class="badge badge-orange">Loosens soil</span> — deep roots break compaction; alliums suppress soil pathogens</td>
+          </tr>
+          <tr>
+            <td><strong>Year 4</strong></td>
+            <td>Fruits &amp; Nightshades</td>
+            <td>Tomatoes, peppers, cucumbers, squash, corn, potatoes</td>
+            <td><span class="badge badge-purple">Heavy feeders</span> — amend with compost; follow with legumes next year</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box">
+      <strong>Key rule:</strong> Tomatoes, potatoes, peppers, and eggplant are all nightshades (Solanaceae).
+      Never follow one with another — they share blight and nematode pressure. Allow at least 3 years between nightshade plantings in the same bed.
+    </div>
+
+    <h3>Rotation for Small Spaces — 3-Bed Minimum</h3>
+    <p>If space is tight, compress to a 3-bed rotation: Legumes → Brassicas + Roots → Fruiting crops. Always move in one direction. Label beds A, B, C and rotate A→B→C→A each spring.</p>
+
+    <h3>What Doesn't Rotate</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Crop</th><th>Why It Stays Put</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Asparagus</strong></td><td>Perennial — dedicated permanent bed; don't disturb roots</td></tr>
+          <tr><td><strong>Rhubarb</strong></td><td>Perennial — permanent bed; improves with age</td></tr>
+          <tr><td><strong>Garlic</strong></td><td>Exception: rotate every 3 years to prevent white rot buildup</td></tr>
+          <tr><td><strong>Strawberries</strong></td><td>Renew bed every 3–4 years; move to fresh ground to prevent disease</td></tr>
+          <tr><td><strong>All perennial veg</strong></td><td>Permanent beds — build soil around them, don't rotate</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SUCCESSION PLANTING
+    ═══════════════════════════════════════════════════════════════ -->
+    <h2>Succession Planting</h2>
+    <p>
+      Stagger sowings so you harvest continuously instead of all at once. Without succession
+      planting you get a glut in June and nothing in August.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Crop</th><th>Interval</th><th>How Many Successions</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Lettuce</strong></td><td>Every 2–3 weeks</td><td>4–6 (spring) + 3–4 (fall)</td><td>Stop in summer heat; resume in August</td></tr>
+          <tr><td><strong>Spinach</strong></td><td>Every 3 weeks</td><td>3 (spring) + 3 (fall)</td><td>Bolts in heat; spring and fall only</td></tr>
+          <tr><td><strong>Radishes</strong></td><td>Every 2 weeks</td><td>8–10 through season</td><td>30-day crop; easiest to succession plant</td></tr>
+          <tr><td><strong>Green Beans</strong></td><td>Every 3 weeks</td><td>3–4</td><td>Last sowing 10 weeks before first frost</td></tr>
+          <tr><td><strong>Peas</strong></td><td>Once spring, once fall</td><td>2</td><td>Won't produce in summer heat</td></tr>
+          <tr><td><strong>Beets</strong></td><td>Every 3–4 weeks</td><td>3–4</td><td>Spring and fall; stores well so fall crop is priority</td></tr>
+          <tr><td><strong>Carrots</strong></td><td>Every 3 weeks</td><td>3–4</td><td>Fall crop sweetest; leave in ground until needed</td></tr>
+          <tr><td><strong>Arugula</strong></td><td>Every 3 weeks</td><td>4–5</td><td>Bolts fast in heat; prioritize spring and fall</td></tr>
+          <tr><td><strong>Bok Choy</strong></td><td>Every 3 weeks</td><td>2 spring + 2 fall</td><td>Avoid summer heat entirely</td></tr>
+          <tr><td><strong>Cilantro</strong></td><td>Every 2–3 weeks</td><td>5–6</td><td>Bolts quickly; let some go to seed for coriander</td></tr>
+          <tr><td><strong>Zucchini</strong></td><td>Once, then one more 6 wks later</td><td>2</td><td>Second planting avoids vine borer pressure</td></tr>
+          <tr><td><strong>Basil</strong></td><td>Every 4 weeks</td><td>3</td><td>Frost-sensitive; start last succession indoors</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SEED SAVING
+    ═══════════════════════════════════════════════════════════════ -->
+    <h2>Seed Saving</h2>
+    <p>
+      Save seeds from open-pollinated and heirloom varieties and you never buy seeds again.
+      Hybrids (marked F1) don't breed true — always save from OP or heirloom stock.
+    </p>
+
+    <h3>Easiest Seeds to Save (Start Here)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Crop</th><th>Difficulty</th><th>Method</th><th>Isolation Needed</th><th>Storage Life</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Beans (dry)</strong></td><td><span class="badge badge-green">Easy</span></td><td>Let pods dry on plant; shell and store</td><td>None — self-pollinating</td><td>3–4 years</td></tr>
+          <tr><td><strong>Peas</strong></td><td><span class="badge badge-green">Easy</span></td><td>Let pods dry fully on vine; shell and dry</td><td>None — self-pollinating</td><td>3 years</td></tr>
+          <tr><td><strong>Tomatoes</strong></td><td><span class="badge badge-green">Easy</span></td><td>Ferment seeds in water 3 days; rinse and dry</td><td>25 ft between varieties</td><td>4–6 years</td></tr>
+          <tr><td><strong>Peppers</strong></td><td><span class="badge badge-green">Easy</span></td><td>Scrape seeds from fully ripe fruit; dry 2 weeks</td><td>300 ft (cross-pollinates easily)</td><td>2–3 years</td></tr>
+          <tr><td><strong>Lettuce</strong></td><td><span class="badge badge-green">Easy</span></td><td>Let plant bolt and flower; shake dry seed heads into bag</td><td>25 ft between varieties</td><td>3 years</td></tr>
+          <tr><td><strong>Squash / Pumpkin</strong></td><td><span class="badge badge-orange">Medium</span></td><td>Scoop seeds from ripe fruit; rinse and dry 3 weeks</td><td>½ mile (hand-pollinate to be safe)</td><td>4–6 years</td></tr>
+          <tr><td><strong>Corn</strong></td><td><span class="badge badge-orange">Medium</span></td><td>Leave ears on stalk until fully dry; shell and store</td><td>1 mile from other corn — grow only one variety</td><td>2–3 years</td></tr>
+          <tr><td><strong>Beets</strong></td><td><span class="badge badge-orange">Medium</span></td><td>Biennial — overwinter roots, replant spring, collect seed in year 2</td><td>1 mile (wind-pollinated)</td><td>4 years</td></tr>
+          <tr><td><strong>Carrots</strong></td><td><span class="badge badge-orange">Medium</span></td><td>Biennial — same as beets; collect seed heads in year 2</td><td>1 mile (wind-pollinated)</td><td>3 years</td></tr>
+          <tr><td><strong>Kale / Collards</strong></td><td><span class="badge badge-orange">Medium</span></td><td>Let overwinter; collect seed pods before they shatter</td><td>300 ft from other brassicas</td><td>4 years</td></tr>
+          <tr><td><strong>Onions / Garlic</strong></td><td><span class="badge badge-orange">Medium</span></td><td>Garlic: save largest cloves to replant. Onions: biennial seed saving</td><td>1 mile for seed onions</td><td>Garlic: replant annually</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Seed Storage Rules</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Rule</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cool + dry + dark</strong></td><td>Ideal: 35–50°F, below 50% humidity. A sealed jar in the refrigerator works perfectly.</td></tr>
+          <tr><td><strong>Label everything</strong></td><td>Variety name, year saved, location. Unlabelled seeds become useless in 2 seasons.</td></tr>
+          <tr><td><strong>Test viability</strong></td><td>Before planting old seeds: place 10 on a damp paper towel, fold, wait 7 days. If fewer than 6 sprout, buy fresh.</td></tr>
+          <tr><td><strong>Silica gel packets</strong></td><td>Add one to each jar to absorb moisture. Recharge in 250°F oven for 30 min when saturated.</td></tr>
+          <tr><td><strong>Save from best plants</strong></td><td>Always save from the healthiest, most productive plants — not the first or last to fruit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SOIL BUILDING
+    ═══════════════════════════════════════════════════════════════ -->
+    <h2>Soil Building</h2>
+    <p>
+      Healthy soil grows healthy food. A self-sufficient system must feed the soil as much
+      as it takes from it. The goal is living soil — teeming with fungi, bacteria, and worms
+      that do the feeding work for you.
+    </p>
+
+    <h3>Compost System</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Input</th><th>Type</th><th>C:N Ratio</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Kitchen scraps (veg only)</td><td>Green (N)</td><td>15:1</td><td>No meat, dairy, or cooked food</td></tr>
+          <tr><td>Fresh grass clippings</td><td>Green (N)</td><td>20:1</td><td>Don't pile thick — layer with browns</td></tr>
+          <tr><td>Fresh manure (chicken, rabbit)</td><td>Green (N)</td><td>10:1</td><td>Hot-compost first; don't apply raw</td></tr>
+          <tr><td>Dried leaves</td><td>Brown (C)</td><td>60:1</td><td>Shred for faster breakdown</td></tr>
+          <tr><td>Straw / hay</td><td>Brown (C)</td><td>80:1</td><td>Excellent mulch base</td></tr>
+          <tr><td>Cardboard (unprinted)</td><td>Brown (C)</td><td>350:1</td><td>Wet before layering; smothers weeds</td></tr>
+          <tr><td>Wood chips</td><td>Brown (C)</td><td>400:1</td><td>Surface mulch only — don't dig in</td></tr>
+          <tr><td>Comfrey leaves</td><td>Green (N)</td><td>10:1</td><td>Activator — accelerates whole pile</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Target ratio: <strong>3 parts brown : 1 part green</strong>. Keep moist (wrung-out sponge), turn every 2–4 weeks. Ready in 2–4 months when it smells like earth and you can't identify original materials.</p>
+
+    <h3>Annual Soil Amendment Schedule</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Timing</th><th>Action</th><th>Rate</th></tr></thead>
+        <tbody>
+          <tr><td>Early spring (before planting)</td><td>Top-dress all beds with 2–3" finished compost</td><td>~1 cubic yard per 100 sq ft</td></tr>
+          <tr><td>After last frost</td><td>Apply 3–4" wood chip mulch between plants</td><td>Suppresses weeds; feeds fungi</td></tr>
+          <tr><td>Midsummer</td><td>Comfrey chop-and-drop around heavy feeders</td><td>3–4 cuts per plant per season</td></tr>
+          <tr><td>After harvest</td><td>Plant cover crop (winter rye + hairy vetch) in empty beds</td><td>Prevents erosion; adds N in spring</td></tr>
+          <tr><td>Late fall</td><td>Thick straw mulch over all perennial beds</td><td>Protects roots; feeds worms over winter</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Cover Crops by Season</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Cover Crop</th><th>Season</th><th>Benefit</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Winter Rye</strong></td><td>Fall – spring</td><td>Prevents erosion; massive organic matter; easy to terminate</td></tr>
+          <tr><td><strong>Hairy Vetch</strong></td><td>Fall – spring</td><td>Fixes 60–120 lbs N/acre; winter-hardy; pairs with rye</td></tr>
+          <tr><td><strong>Crimson Clover</strong></td><td>Spring – summer</td><td>Fixes nitrogen; attracts pollinators; terminates easily</td></tr>
+          <tr><td><strong>Buckwheat</strong></td><td>Summer (45-day crop)</td><td>Smothers weeds; attracts beneficial insects; fast turnover</td></tr>
+          <tr><td><strong>Oats</strong></td><td>Spring or fall</td><td>Winter-kills in zones 5–6 (no termination needed); loose residue</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ANIMAL INTEGRATION
+    ═══════════════════════════════════════════════════════════════ -->
+    <h2>Animal Integration</h2>
+    <p>
+      No garden fully covers all nutritional needs. Four to six chickens solve the three
+      hardest gaps — B12, EPA/DHA omega-3, and complete protein — while producing
+      the best fertilizer available and controlling pests.
+    </p>
+
+    <div class="note-box">
+      <strong>The four nutrient gaps only animals reliably fill:</strong>
+      Vitamin B12 · EPA/DHA omega-3 · Vitamin D (from pasture eggs) · Complete bioavailable protein.
+      You can patch these with supplements — or you can keep four chickens.
+    </div>
+
+    <h3>Chickens — The Core Animal for This System</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Factor</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Number needed</strong></td><td>4–6 hens for two people; provides 24–36 eggs/week at peak lay</td></tr>
+          <tr><td><strong>Best breeds</strong></td><td>Rhode Island Red, Plymouth Rock, Sussex — dual-purpose (eggs + meat), hardy, good layers</td></tr>
+          <tr><td><strong>Space</strong></td><td>4 sq ft/bird inside coop; 10 sq ft/bird in run minimum. More is always better.</td></tr>
+          <tr><td><strong>Feed</strong></td><td>Layer pellets + kitchen scraps + pasture. Pasture eggs have 3–6× more omega-3 than confined eggs.</td></tr>
+          <tr><td><strong>Nutritional output per egg</strong></td><td>6g complete protein, 70 kcal, B12, D, selenium, choline — one egg covers a meaningful share of daily targets</td></tr>
+          <tr><td><strong>Manure value</strong></td><td>~1 lb/bird/day; highest N of any common livestock manure — hot-compost before applying</td></tr>
+          <tr><td><strong>Pest control</strong></td><td>Rotate through garden in fall after harvest — scratch up grubs, slugs, and overwintering pests</td></tr>
+          <tr><td><strong>Garden integration</strong></td><td>Move in mobile pen ("chicken tractor") across garden beds before planting each spring</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Optional Additions — When to Expand</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Animal</th><th>What It Adds</th><th>Space / Effort</th><th>When to Consider</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Rabbits</strong></td>
+            <td>Meat protein, EPA/DHA, B12; manure is cold (can apply directly); no noise</td>
+            <td>Low — hutch-based; very efficient feed conversion</td>
+            <td>When meat protein is a priority; no extra land needed</td>
+          </tr>
+          <tr>
+            <td><strong>Dairy Goat</strong></td>
+            <td>Milk, cheese, butter — covers calcium, B12, complete fat; one goat = 1 gallon/day</td>
+            <td>Medium — needs daily milking; 200 sq ft minimum</td>
+            <td>When dairy is desired and land allows; 2 goats minimum (social animals)</td>
+          </tr>
+          <tr>
+            <td><strong>Fish Pond (Perch / Tilapia)</strong></td>
+            <td>EPA/DHA omega-3, complete protein; pond water = liquid fertilizer</td>
+            <td>Medium — IBC tote or pond; minimal daily care once established</td>
+            <td>When EPA/DHA gap is a priority without keeping mammals</td>
+          </tr>
+          <tr>
+            <td><strong>Ducks</strong></td>
+            <td>Eggs (richer than chicken), slug and snail control, less garden damage than chickens</td>
+            <td>Low-medium — need water source; messier than chickens</td>
+            <td>High slug pressure; wet climate; want egg variety</td>
+          </tr>
+          <tr>
+            <td><strong>Honeybees</strong></td>
+            <td>Pollination (can increase garden yield 20–30%), honey for calories and preservation</td>
+            <td>Low — 2 hive checks/month in season; minimal space</td>
+            <td>Any time — highest return on investment of any addition</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Garden Integration Calendar</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Season</th><th>Animal Task</th><th>Garden Benefit</th></tr></thead>
+        <tbody>
+          <tr><td>Early spring</td><td>Move chicken tractor across empty beds</td><td>Scratch, fertilize, and pest-clear before planting</td></tr>
+          <tr><td>Spring–summer</td><td>Collect manure weekly; hot-compost</td><td>Finished compost ready by fall</td></tr>
+          <tr><td>Summer</td><td>Let chickens free-range after harvest of each bed</td><td>Clean up crop debris; eat pests</td></tr>
+          <tr><td>Fall</td><td>Full garden rotation through chicken tractor</td><td>Deep scratch, fertilize, overwinter pest control</td></tr>
+          <tr><td>Winter</td><td>Deep litter method in coop (add bedding on top)</td><td>Compostable litter pile ready in spring</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes &mdash; By Stax
+  </footer>
+
+</div>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+</body>
+</html>

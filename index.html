@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability Garden Guide</title>
+  <meta name="description" content="A complete self-sufficiency guide for one man and one woman — full nutritional specs, annual and perennial garden plans, grow calendar, and companion planting. By Stax.">
+  <meta property="og:title" content="Sustainability Garden Guide">
+  <meta property="og:description" content="Full nutritional self-sufficiency for two people — annual garden, perennial food forest, grow calendar, and companion planting guide. By Stax.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="favicon.svg">
+    <meta name="description" content="A complete self-sufficiency guide for one man and one woman — full nutritional specs, annual and perennial garden plans, grow calendar, and companion planting. By Stax.">
+  <meta property="og:title" content="Sustainability Garden Guide">
+  <meta property="og:description" content="Full nutritional self-sufficiency for two people — annual garden, perennial food forest, grow calendar, and companion planting. By Stax.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+      <div class="tagline" style="font-style:italic;margin-top:3px;opacity:0.85;">"The ultimate goal of farming is not the growing of crops, but the cultivation and perfection of human beings." — Masanobu Fukuoka</div>
+    </div>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html" class="active">Home</a>
+
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html">Goal 3 — Perennial Garden</a>
+
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html">Grow Calendar</a>
+    <a href="companion-planting.html">Companion Planting</a>
+    <a href="resources.html">Soil, Seeds &amp; Animals</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Sustainability Garden Guide</h1>
+    <p class="page-intro">
+      A complete reference for growing all the food two adults need — one man, one woman —
+      with full nutritional coverage, a calorie base, and a no-replanting perennial system
+      built on heirloom and legacy plant varieties.
+    </p>
+
+    <h2>Three Goals</h2>
+    <div class="goal-cards">
+      <a class="goal-card" href="goal-1-nutrition.html">
+        <div class="card-number">Goal 1</div>
+        <h3>Full Nutritional Specifications</h3>
+        <p>Daily and yearly targets for every macro, vitamin, and mineral for one man and one woman. Identifies the hardest nutrients to source from a garden.</p>
+      </a>
+      <a class="goal-card" href="goal-2-annual.html">
+        <div class="card-number">Goal 2</div>
+        <h3>Annual Garden Plan</h3>
+        <p>All the crops you replant each year to hit calorie and nutrient targets. Includes space requirements, yields, and a preservation strategy.</p>
+      </a>
+      <a class="goal-card" href="goal-3-perennial.html">
+        <div class="card-number">Goal 3</div>
+        <h3>Perennial Garden Plan</h3>
+        <p>Plant it once. Harvest for decades. Trees, shrubs, and perennial vegetables using heirloom and legacy varieties for maximum nutrient density.</p>
+      </a>
+    </div>
+
+    <h2>Supporting Resources</h2>
+    <div class="goal-cards">
+      <a class="goal-card" href="grow-calendar.html">
+        <div class="card-number">Resource</div>
+        <h3>Grow Calendar</h3>
+        <p>Month-by-month planting and harvest schedule for every crop in the guide — annuals and perennials — with monthly task summaries.</p>
+      </a>
+      <a class="goal-card" href="companion-planting.html">
+        <div class="card-number">Resource</div>
+        <h3>Companion Planting</h3>
+        <p>Symbiosis-based planting guilds, nitrogen fixers, dynamic accumulators, pest control through planting, and combinations to avoid.</p>
+      
+      <a class="goal-card" href="resources.html">
+        <div class="card-number">Resource</div>
+        <h3>Soil, Seeds &amp; Animals</h3>
+        <p>Crop rotation, seed saving, succession planting, soil building, and animal integration to close every nutritional gap.</p>
+      </a>
+    </div>
+
+    <h2>How This Guide Works</h2>
+    <p>
+      Start with <a href="goal-1-nutrition.html">Goal 1</a> to understand exactly what the body needs.
+      Then use <a href="goal-2-annual.html">Goal 2</a> for a traditional vegetable garden that covers those needs each season.
+      For a lower-maintenance, no-replant system, build the <a href="goal-3-perennial.html">Goal 3 perennial garden</a> alongside or instead.
+    </p>
+    <p>
+      Use the <a href="grow-calendar.html">Grow Calendar</a> to know what to do each month,
+      and <a href="companion-planting.html">Companion Planting</a> to design a system where plants
+      support each other — fixing nitrogen, repelling pests, and attracting beneficial insects.
+    </p>
+
+    <div class="note-box">
+      <strong>Key gaps no garden fully covers:</strong>
+      Vitamin B12 (requires eggs, dairy, or meat), iodine (use iodized salt or kelp),
+      selenium (1–2 Brazil nuts/person/day), and EPA/DHA omega-3 (eggs from pasture chickens or fish).
+      Four chickens solve three of these four gaps entirely.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes
+  </footer>
+
+</div>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

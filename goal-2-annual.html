@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goal 2 — Annual Garden Plan | Sustainability Garden Guide</title>
+    <meta name="description" content="Complete annual garden plan for full nutritional coverage for two people — calorie crops, protein, greens, roots, and preservation strategy. By Stax.">
+  <meta property="og:title" content="Goal 2 — Annual Garden Plan">
+  <meta property="og:description" content="Every crop needed to feed two people for a year — calorie base, protein, leafy greens, roots, brassicas, and a full preservation strategy.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+    </div>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html">Home</a>
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html" class="active">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html">Goal 3 — Perennial Garden</a>
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html">Grow Calendar</a>
+    <a href="companion-planting.html">Companion Planting</a>
+    <a href="resources.html">Soil, Seeds &amp; Animals</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Goal 2 — Annual Garden Plan</h1>
+    <p class="page-intro">
+      All crops replanted each year to provide full calorie and nutrient coverage for two people.
+      Minimum growing area ~0.1 acre; 0.25 acre recommended for surplus and crop failure buffer.
+      Adjust quantities down 20–30% if supplementing with eggs, dairy, or meat.
+    </p>
+
+    <!-- Filter bar — wired up in goal-2-annual.js when search is added -->
+    <div class="filter-bar">
+      <label>Filter by category:</label>
+      <select id="filter-category" onchange="filterRows()">
+        <option value="">All</option>
+        <option value="calorie">Calorie Crops</option>
+        <option value="protein">Protein Crops</option>
+        <option value="greens">Leafy Greens</option>
+        <option value="root">Root Vegetables</option>
+        <option value="fruiting">Fruiting Vegetables</option>
+        <option value="brassica">Brassicas</option>
+        <option value="herb">Herbs</option>
+        <option value="oilseed">Oilseeds</option>
+      </select>
+      <label>Search:</label>
+      <input type="text" id="search-annual" placeholder="e.g. potato, protein, iron…" oninput="filterRows()">
+    </div>
+    <p class="filter-note">Filter by category or search by crop name, nutrient, or keyword.</p>
+
+    <div class="table-wrap">
+      <table id="annual-table">
+        <thead>
+          <tr>
+            <th>Crop</th>
+            <th>Space</th>
+            <th>Annual Yield (2 people)</th>
+            <th>Primary Nutrients</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="category-row"><td colspan="5">Calorie Crops — Foundation</td></tr>
+          <tr data-category="calorie" data-nutrients="carbs potassium vitamin-c">
+            <td><strong>Potatoes</strong></td>
+            <td>400 sq ft</td>
+            <td>400 – 600 lbs</td>
+            <td><span class="badge badge-orange">Carbs</span> Potassium, Vitamin C</td>
+            <td>Best calorie-per-sq-ft of any vegetable</td>
+          </tr>
+          <tr data-category="calorie" data-nutrients="carbs vitamin-a potassium">
+            <td><strong>Sweet Potatoes</strong></td>
+            <td>200 sq ft</td>
+            <td>200 – 300 lbs</td>
+            <td><span class="badge badge-orange">Carbs</span> Vitamin A, Potassium</td>
+            <td>Stores well; extremely high vitamin A</td>
+          </tr>
+          <tr data-category="calorie" data-nutrients="carbs vitamin-a fiber">
+            <td><strong>Winter Squash / Pumpkin</strong></td>
+            <td>300 sq ft</td>
+            <td>300 – 500 lbs</td>
+            <td><span class="badge badge-orange">Carbs</span> Vitamin A, Fiber</td>
+            <td>Butternut, hubbard, delicata; stores 6 months</td>
+          </tr>
+          <tr data-category="calorie protein" data-nutrients="protein iron folate fiber">
+            <td><strong>Dry Beans</strong></td>
+            <td>200 sq ft</td>
+            <td>40 – 60 lbs dried</td>
+            <td><span class="badge badge-blue">Protein</span> Iron, Folate, Fiber</td>
+            <td>Black, kidney, navy, pinto — grow all four</td>
+          </tr>
+          <tr data-category="calorie protein" data-nutrients="protein iron folate">
+            <td><strong>Dry Peas / Lentils</strong></td>
+            <td>150 sq ft</td>
+            <td>25 – 40 lbs dried</td>
+            <td><span class="badge badge-blue">Protein</span> Iron, Folate</td>
+            <td>Easier to digest than beans</td>
+          </tr>
+          <tr data-category="calorie" data-nutrients="carbs niacin">
+            <td><strong>Corn (flour/dent)</strong></td>
+            <td>300 sq ft</td>
+            <td>50 – 80 lbs dried</td>
+            <td><span class="badge badge-orange">Carbs</span> Niacin</td>
+            <td>Pair with beans for complete protein</td>
+          </tr>
+          <tr data-category="calorie protein" data-nutrients="protein iron calcium">
+            <td><strong>Grain Amaranth</strong></td>
+            <td>100 sq ft</td>
+            <td>15 – 25 lbs seed</td>
+            <td><span class="badge badge-blue">Complete Protein</span> Iron, Calcium</td>
+            <td>Heirloom: Golden Giant; grows fast</td>
+          </tr>
+          <tr data-category="calorie oilseed" data-nutrients="fat protein vitamin-e">
+            <td><strong>Sunflower (seed)</strong></td>
+            <td>100 sq ft</td>
+            <td>10 – 20 lbs seed</td>
+            <td><span class="badge badge-purple">Fat</span> Protein, Vitamin E</td>
+            <td>High-oleic varieties for oil content</td>
+          </tr>
+          <tr data-category="calorie oilseed" data-nutrients="omega3 fiber">
+            <td><strong>Flax</strong></td>
+            <td>50 sq ft</td>
+            <td>5 – 10 lbs seed</td>
+            <td><span class="badge badge-purple">Omega-3</span> Fiber</td>
+            <td>Grind before eating for bioavailability</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="5">Protein Crops</td></tr>
+          <tr data-category="protein" data-nutrients="protein calcium iron">
+            <td><strong>Soybeans</strong></td>
+            <td>150 sq ft</td>
+            <td>30 – 50 lbs dry</td>
+            <td><span class="badge badge-blue">Complete Protein</span> Calcium, Iron</td>
+            <td>Only plant with full amino acid profile</td>
+          </tr>
+          <tr data-category="protein" data-nutrients="protein fat niacin">
+            <td><strong>Peanuts</strong></td>
+            <td>100 sq ft</td>
+            <td>15 – 25 lbs</td>
+            <td><span class="badge badge-blue">Protein</span> Fat, Niacin</td>
+            <td>Zone 6+ warm climates</td>
+          </tr>
+          <tr data-category="protein" data-nutrients="protein iron magnesium">
+            <td><strong>Quinoa</strong></td>
+            <td>100 sq ft</td>
+            <td>10 – 20 lbs</td>
+            <td><span class="badge badge-blue">Complete Protein</span> Iron, Magnesium</td>
+            <td>Rinse well to remove saponins</td>
+          </tr>
+          <tr data-category="protein oilseed" data-nutrients="protein omega3">
+            <td><strong>Hemp Seed</strong></td>
+            <td>50 sq ft</td>
+            <td>5 – 10 lbs</td>
+            <td><span class="badge badge-blue">Complete Protein</span> Omega-3</td>
+            <td>Legal in most US states for food use</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="5">Leafy Greens — Vitamins and Minerals</td></tr>
+          <tr data-category="greens" data-nutrients="vitamin-a vitamin-c vitamin-k calcium iron">
+            <td><strong>Kale</strong></td>
+            <td>100 sq ft</td>
+            <td>Year-round harvest</td>
+            <td><span class="badge badge-green">A, C, K</span> Calcium, Iron</td>
+            <td>Most nutrient-dense leafy green per sq ft</td>
+          </tr>
+          <tr data-category="greens" data-nutrients="vitamin-a vitamin-c vitamin-k iron folate">
+            <td><strong>Spinach</strong></td>
+            <td>75 sq ft</td>
+            <td>Spring + fall</td>
+            <td><span class="badge badge-green">A, C, K</span> Iron, Folate</td>
+            <td>Bolts in heat; plant twice yearly</td>
+          </tr>
+          <tr data-category="greens" data-nutrients="vitamin-a vitamin-c vitamin-k magnesium">
+            <td><strong>Swiss Chard</strong></td>
+            <td>75 sq ft</td>
+            <td>Spring – fall</td>
+            <td><span class="badge badge-green">A, C, K</span> Magnesium</td>
+            <td>Cut-and-come-again; extremely productive</td>
+          </tr>
+          <tr data-category="greens" data-nutrients="vitamin-a vitamin-c vitamin-k calcium">
+            <td><strong>Collard Greens</strong></td>
+            <td>75 sq ft</td>
+            <td>Spring, fall, winter</td>
+            <td><span class="badge badge-green">A, C, K</span> Calcium</td>
+            <td>Longer lived than kale in hot climates</td>
+          </tr>
+          <tr data-category="greens" data-nutrients="vitamin-a vitamin-k folate">
+            <td><strong>Lettuce</strong></td>
+            <td>50 sq ft</td>
+            <td>Spring + fall</td>
+            <td><span class="badge badge-green">A, K</span> Folate</td>
+            <td>Succession plant every 3 weeks</td>
+          </tr>
+          <tr data-category="greens" data-nutrients="vitamin-a vitamin-c vitamin-k calcium">
+            <td><strong>Bok Choy</strong></td>
+            <td>75 sq ft</td>
+            <td>Spring + fall</td>
+            <td><span class="badge badge-green">A, C, K</span> Calcium</td>
+            <td>Very high calcium for a leafy green</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="5">Root Vegetables</td></tr>
+          <tr data-category="root" data-nutrients="folate potassium iron">
+            <td><strong>Beets</strong></td>
+            <td>75 sq ft</td>
+            <td>50 – 80 lbs</td>
+            <td>Folate, Potassium, Iron</td>
+            <td>Eat the greens too — more nutritious than root</td>
+          </tr>
+          <tr data-category="root" data-nutrients="vitamin-a">
+            <td><strong>Carrots</strong></td>
+            <td>100 sq ft</td>
+            <td>80 – 120 lbs</td>
+            <td><span class="badge badge-green">Vitamin A</span></td>
+            <td>Key vitamin A source; stores well</td>
+          </tr>
+          <tr data-category="root" data-nutrients="vitamin-c potassium calcium">
+            <td><strong>Turnips</strong></td>
+            <td>75 sq ft</td>
+            <td>60 – 100 lbs</td>
+            <td>Vitamin C, Potassium, Calcium</td>
+            <td>Fast crop; root and greens both edible</td>
+          </tr>
+          <tr data-category="root" data-nutrients="fiber potassium folate">
+            <td><strong>Parsnips</strong></td>
+            <td>50 sq ft</td>
+            <td>40 – 60 lbs</td>
+            <td>Fiber, Potassium, Folate</td>
+            <td>Harvest after frost for sweetness</td>
+          </tr>
+          <tr data-category="root" data-nutrients="vitamin-c potassium fiber">
+            <td><strong>Rutabaga</strong></td>
+            <td>50 sq ft</td>
+            <td>50 – 80 lbs</td>
+            <td>Vitamin C, Potassium, Fiber</td>
+            <td>Stores 4–6 months in root cellar</td>
+          </tr>
+          <tr data-category="root" data-nutrients="immune sulfur">
+            <td><strong>Garlic</strong></td>
+            <td>50 sq ft</td>
+            <td>20 – 40 lbs</td>
+            <td>Sulfur compounds, immune support</td>
+            <td>Plant fall, harvest summer</td>
+          </tr>
+          <tr data-category="root" data-nutrients="vitamin-c flavonoids">
+            <td><strong>Onions</strong></td>
+            <td>75 sq ft</td>
+            <td>40 – 60 lbs</td>
+            <td>Flavonoids, Vitamin C</td>
+            <td>Foundation of any stored meal; keeps 6+ months</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="5">Fruiting Vegetables</td></tr>
+          <tr data-category="fruiting" data-nutrients="vitamin-c potassium lycopene">
+            <td><strong>Tomatoes</strong></td>
+            <td>100 sq ft</td>
+            <td>100 – 200 lbs</td>
+            <td><span class="badge badge-green">Vitamin C</span> Lycopene, Potassium</td>
+            <td>Can, dry, or freeze for winter</td>
+          </tr>
+          <tr data-category="fruiting" data-nutrients="vitamin-c">
+            <td><strong>Peppers (sweet + hot)</strong></td>
+            <td>50 sq ft</td>
+            <td>40 – 80 lbs</td>
+            <td><span class="badge badge-green">Vitamin C</span> (highest of any veg)</td>
+            <td>Dry and powder for off-season use</td>
+          </tr>
+          <tr data-category="fruiting" data-nutrients="vitamin-k">
+            <td><strong>Cucumbers</strong></td>
+            <td>50 sq ft</td>
+            <td>60 – 100 lbs</td>
+            <td>Hydration, Vitamin K</td>
+            <td>Ferment/pickle for preservation</td>
+          </tr>
+          <tr data-category="fruiting" data-nutrients="b-vitamins potassium">
+            <td><strong>Zucchini / Summer Squash</strong></td>
+            <td>50 sq ft</td>
+            <td>80 – 150 lbs</td>
+            <td>B vitamins, Potassium</td>
+            <td>Very productive; prolific</td>
+          </tr>
+          <tr data-category="fruiting" data-nutrients="protein vitamin-c folate iron">
+            <td><strong>Peas (fresh/shell)</strong></td>
+            <td>75 sq ft</td>
+            <td>20 – 40 lbs pods</td>
+            <td><span class="badge badge-blue">Protein</span> Vitamin C, Folate</td>
+            <td>Early spring crop; trellised</td>
+          </tr>
+          <tr data-category="fruiting" data-nutrients="fiber iron folate">
+            <td><strong>Green Beans</strong></td>
+            <td>75 sq ft</td>
+            <td>40 – 70 lbs</td>
+            <td>Fiber, Iron, Folate</td>
+            <td>Pole beans more productive than bush</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="5">Brassicas</td></tr>
+          <tr data-category="brassica" data-nutrients="vitamin-c vitamin-k folate calcium">
+            <td><strong>Broccoli</strong></td>
+            <td>75 sq ft</td>
+            <td>30 – 50 lbs</td>
+            <td><span class="badge badge-green">C, K</span> Folate, Calcium</td>
+            <td>Side-shoots extend harvest after main head</td>
+          </tr>
+          <tr data-category="brassica" data-nutrients="vitamin-c vitamin-k folate">
+            <td><strong>Cabbage</strong></td>
+            <td>75 sq ft</td>
+            <td>60 – 100 lbs</td>
+            <td><span class="badge badge-green">C, K</span> Folate</td>
+            <td>Ferment as sauerkraut for probiotics + storage</td>
+          </tr>
+          <tr data-category="brassica" data-nutrients="vitamin-c vitamin-k folate protein">
+            <td><strong>Brussels Sprouts</strong></td>
+            <td>50 sq ft</td>
+            <td>20 – 40 lbs</td>
+            <td><span class="badge badge-green">C, K</span> Folate, Protein</td>
+            <td>Most nutrient-dense brassica; sweeter after frost</td>
+          </tr>
+          <tr data-category="brassica" data-nutrients="vitamin-c vitamin-k folate">
+            <td><strong>Cauliflower</strong></td>
+            <td>50 sq ft</td>
+            <td>30 – 50 lbs</td>
+            <td><span class="badge badge-green">C, K</span> B6, Folate</td>
+            <td>Best in cool climates; tricky timing</td>
+          </tr>
+
+          <tr class="category-row"><td colspan="5">Herbs</td></tr>
+          <tr data-category="herb" data-nutrients="vitamin-k vitamin-c iron">
+            <td><strong>Parsley</strong></td>
+            <td>10 sq ft</td>
+            <td>—</td>
+            <td><span class="badge badge-green">Very high K, C</span> Iron</td>
+            <td>One of the most nutrient-dense herbs per gram</td>
+          </tr>
+          <tr data-category="herb" data-nutrients="vitamin-k antioxidant">
+            <td><strong>Basil</strong></td>
+            <td>10 sq ft</td>
+            <td>—</td>
+            <td>Antioxidants, Vitamin K</td>
+            <td>Preserve as pesto or dried</td>
+          </tr>
+          <tr data-category="herb" data-nutrients="calcium iron antioxidant">
+            <td><strong>Dill</strong></td>
+            <td>10 sq ft</td>
+            <td>—</td>
+            <td>Calcium, Iron, Antioxidants</td>
+            <td>Essential for pickling; attracts beneficial wasps</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Space Summary</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Category</th><th>Approx Space</th></tr></thead>
+        <tbody>
+          <tr><td>Calorie crops</td><td>~1,600 sq ft</td></tr>
+          <tr><td>Protein crops</td><td>~400 sq ft</td></tr>
+          <tr><td>Leafy greens</td><td>~500 sq ft</td></tr>
+          <tr><td>Root vegetables</td><td>~550 sq ft</td></tr>
+          <tr><td>Fruiting vegetables</td><td>~430 sq ft</td></tr>
+          <tr><td>Brassicas</td><td>~280 sq ft</td></tr>
+          <tr><td>Herbs</td><td>~60 sq ft</td></tr>
+          <tr><td>Paths, beds, borders</td><td>~500 sq ft</td></tr>
+          <tr><td><strong>Total minimum</strong></td><td><strong>~4,300 sq ft (~0.1 acre)</strong></td></tr>
+          <tr><td><strong>Recommended with margin</strong></td><td><strong>~10,000 sq ft (~0.25 acre)</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Preservation Strategy</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Method</th><th>Best For</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Root cellar</strong></td><td>Potatoes, squash, carrots, beets, turnips</td><td>32–40°F, high humidity; covers most calorie crops</td></tr>
+          <tr><td><strong>Canning</strong></td><td>Tomatoes, beans, fruit, pickles</td><td>Pressure canning required for low-acid foods</td></tr>
+          <tr><td><strong>Drying</strong></td><td>Beans, corn, seeds, herbs, peppers</td><td>Easiest long-term storage; no refrigeration needed</td></tr>
+          <tr><td><strong>Fermenting</strong></td><td>Cabbage, cucumbers, beets, peppers</td><td>Adds probiotics; extends shelf life 6–12 months</td></tr>
+          <tr><td><strong>Freezing</strong></td><td>Leafy greens, peas, corn, broccoli</td><td>Blanch first; requires continuous power</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box">
+      <strong>Nutrient gaps in this plan:</strong> Vitamin B12 (eggs or dairy), Iodine (iodized salt or kelp),
+      Selenium (1–2 Brazil nuts/day), EPA/DHA omega-3 (eggs or fish). These four cannot come from annual crops.
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes
+  </footer>
+
+</div>
+
+<script>
+function filterRows() {
+  const cat = document.getElementById('filter-category').value.toLowerCase();
+  const search = document.getElementById('search-annual').value.toLowerCase();
+  const rows = document.querySelectorAll('#annual-table tbody tr:not(.category-row)');
+  rows.forEach(row => {
+    const rowCat = (row.dataset.category || '').toLowerCase();
+    const rowText = row.textContent.toLowerCase();
+    const catMatch = !cat || rowCat.includes(cat);
+    const searchMatch = !search || rowText.includes(search);
+    row.classList.toggle('hidden', !(catMatch && searchMatch));
+  });
+}
+</script>
+</body>
+</html>

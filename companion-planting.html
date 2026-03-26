@@ -29,6 +29,10 @@
       padding-bottom: 0.4rem;
       margin-bottom: 0.75rem;
     }
+    [data-theme="dark"] .guild-card h3 {
+      color: #8fc85a;
+      border-bottom-color: #2d4020;
+    }
     .guild-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -44,7 +48,7 @@
       <h1>🌱 Sustainability Garden Guide</h1>
       <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
     </div>
-    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰ Menu</button>
     <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
       <div class="site-logo-placeholder" title="By Stax">By Stax</div>
       <button id="share-btn" onclick="sharePage()">⬆ Share</button>

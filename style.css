@@ -46,7 +46,7 @@
 [data-theme="dark"] .site-nav a { color: #6a9a4a; }
 [data-theme="dark"] .site-nav a:hover,
 [data-theme="dark"] .site-nav a.active { background: rgba(255,255,255,0.05); color: #c8e8a0; }
-[data-theme="dark"] .site-footer { background: #0c1107; color: #4a7a30; }
+[data-theme="dark"] .site-footer { background: #0c1107; color: #6a9a4a; }
 [data-theme="dark"] thead { background: #2a4a15; }
 [data-theme="dark"] tbody tr:hover { background: #1e2d14; }
 [data-theme="dark"] tbody tr.category-row td { background: #1f1810; color: #c8966a; }
@@ -72,7 +72,7 @@
 [data-theme="dark"] tbody td { color: #cce4a8; }
 [data-theme="dark"] tbody td strong { color: #ddecc4; }
 [data-theme="dark"] .filter-note { color: #6a9a4a; }
-[data-theme="dark"] .nav-section { color: #3a6020; }
+[data-theme="dark"] .nav-section { color: #6a9a4a; }
 
 /* Logo placeholder */
 .site-logo-placeholder {
@@ -439,6 +439,12 @@ tbody tr.category-row td {
 .badge-blue    { background: #d4edff; color: #1a5276; }
 .badge-purple  { background: #e8daef; color: #6c3483; }
 .badge-red     { background: #fadbd8; color: #922b21; }
+
+[data-theme="dark"] .badge-green  { background: #0d3d22; color: #6debb0; }
+[data-theme="dark"] .badge-orange { background: #3d2200; color: #ffba6e; }
+[data-theme="dark"] .badge-blue   { background: #0d3a5c; color: #7ecfff; }
+[data-theme="dark"] .badge-purple { background: #2a1a40; color: #d4a8ff; }
+[data-theme="dark"] .badge-red    { background: #3d0a0a; color: #ff9e9e; }
 
 /* ---- Hero Quote ---- */
 

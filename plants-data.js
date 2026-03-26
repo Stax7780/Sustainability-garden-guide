@@ -157,6 +157,9 @@ const PLANT_LINKS = {
   'Radishes':                   'https://en.wikipedia.org/wiki/Radish',
   'Radish':                     'https://en.wikipedia.org/wiki/Radish',
 
+  // ── Companion Flowers / Pest Plants ──────────────────────────────────────
+  'Daffodil':                   'https://en.wikipedia.org/wiki/Narcissus_(plant)',
+
   // ── Companion Herb Aliases (used in companion planting tables) ────────────
   'Lavender':                   'https://en.wikipedia.org/wiki/Lavandula',
   'Rosemary':                   'https://en.wikipedia.org/wiki/Rosemary',

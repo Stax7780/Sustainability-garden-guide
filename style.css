@@ -47,7 +47,7 @@
 [data-theme="dark"] .site-nav a:hover,
 [data-theme="dark"] .site-nav a.active { background: rgba(255,255,255,0.05); color: #c8e8a0; }
 [data-theme="dark"] .site-footer { background: #0c1107; color: #6a9a4a; }
-[data-theme="dark"] thead { background: #2a4a15; }
+[data-theme="dark"] thead { background: #2a4a15; color: #ddecc4; }
 [data-theme="dark"] tbody tr:hover { background: #1e2d14; }
 [data-theme="dark"] tbody tr.category-row td { background: #1f1810; color: #c8966a; }
 [data-theme="dark"] .goal-card { border-color: #2d4020; }

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propagation | Sustainability Garden Guide</title>
+  <meta name="description" content="Seed propagation, stratification, scarification, and vegetative cloning for every crop in the guide. By Stax.">
+  <meta property="og:title" content="Propagation — Seed & Vegetative Guide">
+  <meta property="og:description" content="How to start everything from seed and clone your best plants — cuttings, division, layering, and runners for the full food forest.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+      <div class="tagline" style="font-style:italic;margin-top:3px;opacity:0.85;">"The ultimate goal of farming is not the growing of crops, but the cultivation and perfection of human beings." — <a href="https://en.wikipedia.org/wiki/Masanobu_Fukuoka" target="_blank" rel="noopener noreferrer" title="Learn more about Masanobu Fukuoka" style="color:inherit;text-decoration:underline;text-decoration-style:dotted;">Masanobu Fukuoka</a></div>
+    </div>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰ Menu</button>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html">Home</a>
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html">Goal 3 — Perennial Garden</a>
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html">Grow Calendar</a>
+    <a href="companion-planting.html">Companion Planting</a>
+    <a href="resources.html">Soil, Seeds &amp; Animals</a>
+    <a href="propagation.html" class="active">Propagation</a>
+    <a href="recipes.html">Recipes</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Propagation</h1>
+    <p class="page-intro">
+      Two ways to make more plants: grow from seed, or clone what you already have.
+      Seeds give genetic diversity and are cheap. Cloning preserves exactly what worked —
+      the same variety, the same vigour, the same flavour. A self-sufficient system uses both.
+    </p>
+
+    <!-- ══════════════════════════════════════════════════════
+         SEED PROPAGATION
+    ══════════════════════════════════════════════════════ -->
+    <h2>Seed Propagation</h2>
+
+    <h3>Indoor Seed Starting — When to Sow</h3>
+    <p>Count back from your last frost date. Most annuals need to be started indoors weeks before it's safe to transplant outside.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Crop</th><th>Weeks Before Last Frost</th><th>Germ Temp</th><th>Days to Germinate</th><th>Light to Germinate</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Tomatoes</strong></td><td>6–8 weeks</td><td>70–85°F (21–29°C)</td><td>5–10 days</td><td>Not needed — dark is fine</td></tr>
+          <tr><td><strong>Peppers (sweet + hot)</strong></td><td>8–10 weeks</td><td>80–90°F (27–32°C)</td><td>7–14 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Eggplant</strong></td><td>8–10 weeks</td><td>75–85°F (24–29°C)</td><td>7–14 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Broccoli</strong></td><td>6–8 weeks</td><td>65–75°F (18–24°C)</td><td>4–7 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Cabbage</strong></td><td>6–8 weeks</td><td>65–75°F (18–24°C)</td><td>4–7 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Kale</strong></td><td>4–6 weeks</td><td>60–70°F (15–21°C)</td><td>4–7 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Leeks</strong></td><td>10–12 weeks</td><td>60–70°F (15–21°C)</td><td>7–14 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Celery</strong></td><td>10–12 weeks</td><td>70–75°F (21–24°C)</td><td>14–21 days</td><td>Light required — surface sow</td></tr>
+          <tr><td><strong>Basil</strong></td><td>4–6 weeks</td><td>70–80°F (21–27°C)</td><td>5–10 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Squash / Pumpkin</strong></td><td>2–4 weeks</td><td>70–85°F (21–29°C)</td><td>5–10 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Cucumbers</strong></td><td>2–4 weeks</td><td>70–85°F (21–29°C)</td><td>3–7 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Corn (flour/dent)</strong></td><td>Direct sow only</td><td>60–85°F (15–29°C)</td><td>4–7 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Dry Beans</strong></td><td>Direct sow only</td><td>60–85°F (15–29°C)</td><td>5–8 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Peas (fresh/shell)</strong></td><td>Direct sow — 4 wks before last frost</td><td>45–65°F (7–18°C)</td><td>6–10 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Carrots</strong></td><td>Direct sow only</td><td>55–75°F (13–24°C)</td><td>10–17 days</td><td>Light helps — thin cover</td></tr>
+          <tr><td><strong>Beets</strong></td><td>Direct sow — 4–6 wks before last frost</td><td>50–85°F (10–29°C)</td><td>5–10 days</td><td>Not needed</td></tr>
+          <tr><td><strong>Lettuce</strong></td><td>4–6 weeks or direct sow</td><td>60–70°F (15–21°C)</td><td>2–8 days</td><td>Light required — surface sow</td></tr>
+          <tr><td><strong>Spinach</strong></td><td>Direct sow — 6 wks before last frost</td><td>45–65°F (7–18°C)</td><td>6–14 days</td><td>Not needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Special Seed Treatments</h3>
+    <p>Some seeds won't germinate without pretreatment — they have built-in dormancy mechanisms evolved to prevent germination at the wrong time of year.</p>
+
+    <h4>Cold Stratification</h4>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">
+      Mimics winter. Seeds need a cold, moist period before they'll germinate. Mix seeds with damp vermiculite or paper towel in a sealed bag; refrigerate at 35–40°F (2–4°C) for the required time, then sow.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Duration</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Apple</strong></td><td>60–90 days</td><td>Seedlings won't be true to parent — graft for named varieties</td></tr>
+          <tr><td><strong>Pear</strong></td><td>60–90 days</td><td>Same as apple — use as rootstock or for diversity</td></tr>
+          <tr><td><strong>Plum</strong></td><td>90–120 days</td><td>Some also benefit from scarification first</td></tr>
+          <tr><td><strong>Sour Cherry</strong></td><td>90–120 days</td><td>Cold stratify then sow in early spring</td></tr>
+          <tr><td><strong>Elderberry</strong></td><td>60–90 days</td><td>Or sow outdoors in autumn and let winter do the work</td></tr>
+          <tr><td><strong>Serviceberry / Juneberry</strong></td><td>90–120 days</td><td>Sow fresh in autumn for best results</td></tr>
+          <tr><td><strong>Hazelnut / Filbert</strong></td><td>90–120 days</td><td>Sow in autumn directly — squirrels permitting</td></tr>
+          <tr><td><strong>American Chestnut</strong></td><td>30–90 days</td><td>Keep moist — seeds die if dried out</td></tr>
+          <tr><td><strong>Pawpaw</strong></td><td>70–100 days</td><td>Never let seeds dry; stratify immediately after cleaning</td></tr>
+          <tr><td><strong>Cornelian Cherry</strong></td><td>150–180 days</td><td>Double dormancy — warm then cold stratification</td></tr>
+          <tr><td><strong>Aronia / Chokeberry</strong></td><td>60–90 days</td><td>Easy — direct autumn sow works well</td></tr>
+          <tr><td><strong>Sea Buckthorn</strong></td><td>30–60 days</td><td>Relatively easy to germinate after stratification</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Scarification</h4>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">
+      Hard seed coats prevent water absorption. Nick, sand, or soak seeds to break the coat before sowing.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Method</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Honey Locust</strong></td><td>Nick coat with a knife or sand with sandpaper; soak 24 hrs in warm water</td><td>Coat is extremely hard — nick is fastest</td></tr>
+          <tr><td><strong>Siberian Pea Shrub</strong></td><td>Soak in hot (not boiling) water 12–24 hrs</td><td>Simple hot soak usually sufficient</td></tr>
+          <tr><td><strong>American Groundnut</strong></td><td>Light sand + overnight soak</td><td>Follow with cold stratification 30–60 days</td></tr>
+          <tr><td><strong>Dry Beans</strong></td><td>Overnight soak in room-temperature water</td><td>Speeds germination significantly; don't over-soak</td></tr>
+          <tr><td><strong>Peas (fresh/shell)</strong></td><td>Overnight soak</td><td>Especially helpful in cold or dry soils</td></tr>
+          <tr><td><strong>Nasturtium</strong></td><td>Nick or soak 12 hrs</td><td>Germinates faster; not strictly required</td></tr>
+          <tr><td><strong>Rugosa Rose</strong></td><td>Sand lightly; cold stratify 60–90 days</td><td>Both scarification and stratification needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Hardening Off</h3>
+    <p>Indoor-started seedlings must be gradually introduced to outdoor conditions over 7–14 days before transplanting. Moving directly from indoors to full sun causes transplant shock.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Day Range</th><th>Exposure</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Days 1–3</td><td>1–2 hrs outdoors in shade, no wind</td><td>Morning only; bring in if cold snaps expected</td></tr>
+          <tr><td>Days 4–6</td><td>3–4 hrs in dappled light</td><td>Watch for wilting; water before and after</td></tr>
+          <tr><td>Days 7–9</td><td>Half day in morning sun</td><td>Reduce watering slightly to toughen stems</td></tr>
+          <tr><td>Days 10–12</td><td>Full day outdoors including direct sun</td><td>Leave out overnight if temps stay above 45°F</td></tr>
+          <tr><td>Day 14+</td><td>Transplant to final position</td><td>Water in well; mulch immediately</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box">
+      <strong>Cold frames and cloches</strong> cut hardening time in half — plants transition through glass rather than jumping from controlled warmth straight to open air.
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         VEGETATIVE PROPAGATION
+    ══════════════════════════════════════════════════════ -->
+    <h2>Vegetative Propagation — Cloning</h2>
+    <p>
+      Vegetative propagation produces plants genetically identical to the parent.
+      Use it to multiply your best performers, preserve named heirloom varieties,
+      and produce mature plants faster than seed allows.
+    </p>
+
+    <div class="note-box">
+      <strong>Why clone instead of seed?</strong>
+      Seeds from named varieties (Cox apple, Baldwin garlic, Blenheim apricot) don't breed true —
+      the offspring are genetically different. Cloning is the only way to preserve exactly what you have.
+    </div>
+
+    <h3>Cuttings</h3>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">
+      A cutting is a section of stem, root, or leaf placed in a rooting medium until it develops its own roots.
+      Three types: <strong>softwood</strong> (new growth, spring–early summer), <strong>semi-hardwood</strong> (late summer),
+      and <strong>hardwood</strong> (dormant wood, autumn–winter — easiest for most woody plants).
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Cutting Type</th><th>Best Time</th><th>Method</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Comfrey</strong></td><td>Root cutting</td><td>Any time</td><td>Dig and cut roots into 2–3" sections; bury 2" deep</td><td>Almost impossible to kill; any root fragment will grow</td></tr>
+          <tr><td><strong>Black Currant</strong></td><td>Hardwood</td><td>Late autumn – winter</td><td>Cut pencil-thick stems 8–10", bundle and store in sand or stick directly into ground</td><td>Very high strike rate; easiest woody cutting</td></tr>
+          <tr><td><strong>Red / White Currant</strong></td><td>Hardwood</td><td>Late autumn – winter</td><td>Same as black currant</td><td>Leave top bud above soil; remove lower buds</td></tr>
+          <tr><td><strong>Gooseberry</strong></td><td>Hardwood</td><td>Late autumn – winter</td><td>8–12" cutting; remove all but top 3–4 buds</td><td>Remove lower buds to prevent suckering</td></tr>
+          <tr><td><strong>Elderberry</strong></td><td>Hardwood or softwood</td><td>Autumn or spring</td><td>Hardwood: 6–8" sections pushed into ground. Softwood: 4–6" tip cuttings in perlite</td><td>Roots readily; hardwood is easier</td></tr>
+          <tr><td><strong>Raspberry</strong></td><td>Root cutting or sucker</td><td>Autumn – early spring</td><td>Dig suckers with roots; transplant directly</td><td>Produces suckers freely — just dig and move</td></tr>
+          <tr><td><strong>Fig</strong></td><td>Hardwood</td><td>Late winter</td><td>6–10" sections from last year's wood; root in pots indoors</td><td>Very easy; one branch can produce 6–8 new trees</td></tr>
+          <tr><td><strong>Mulberry</strong></td><td>Hardwood or softwood</td><td>Winter or summer</td><td>Hardwood: 8–10" cuttings in sand/perlite. Softwood: 4–6" tip cuttings under mist or bag</td><td>Hardwood less reliable than softwood; both work</td></tr>
+          <tr><td><strong>Rosemary</strong></td><td>Semi-hardwood</td><td>Late summer</td><td>4–6" tip cutting; strip lower leaves; root in gritty compost</td><td>Dip in rooting hormone; keep humid but not wet</td></tr>
+          <tr><td><strong>Sage</strong></td><td>Semi-hardwood</td><td>Late summer</td><td>Same as rosemary</td><td>New plants more vigorous than old woody growth</td></tr>
+          <tr><td><strong>Thyme</strong></td><td>Softwood or semi-hardwood</td><td>Spring – summer</td><td>2–3" tip cutting; root in gritty mix</td><td>Fast to root; replace parent plant every 3–4 years</td></tr>
+          <tr><td><strong>Mint</strong></td><td>Softwood</td><td>Any time in growing season</td><td>3–4" cutting; root in water or compost</td><td>Will root in a glass of water in 1–2 weeks</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Division</h3>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">
+      Dig up a clumping plant and split the root mass into sections. Each section becomes a new plant.
+      Best done in early spring (before growth) or early autumn (while soil is still warm).
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Frequency</th><th>Method</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Comfrey</strong></td><td>Every 2–3 years or as needed</td><td>Dig crown; chop into sections each with a growing point; replant 18" apart</td><td>Every piece with root will regrow; invasive if not managed</td></tr>
+          <tr><td><strong>Rhubarb</strong></td><td>Every 4–5 years</td><td>Dig crown in early spring; cut into sections each with 1–2 buds; replant</td><td>Dividing reinvigorates old crowns that slow down</td></tr>
+          <tr><td><strong>Chives</strong></td><td>Every 2–3 years</td><td>Lift clump; pull or cut into smaller sections of 6–8 bulbs; replant</td><td>Also refreshes flavour and prevents overcrowding</td></tr>
+          <tr><td><strong>Egyptian Walking Onions</strong></td><td>Annually</td><td>Separate bulbils that form at stem tops; replant immediately</td><td>Each bulbil becomes a new plant the following year</td></tr>
+          <tr><td><strong>Sorrel</strong></td><td>Every 2–3 years</td><td>Lift and divide crown in spring; replant sections</td><td>Division keeps leaves productive; old undivided crowns get woody</td></tr>
+          <tr><td><strong>Yarrow</strong></td><td>Every 2–3 years</td><td>Lift and pull apart the spreading root mat; replant outer sections</td><td>Spreads vigorously — division also controls spread</td></tr>
+          <tr><td><strong>Ramps / Wild Leek</strong></td><td>Every 3–5 years</td><td>Carefully lift clumps in autumn; divide and replant; disturb as little as possible</td><td>Slow to establish — be patient; never harvest more than 1/3 of a colony</td></tr>
+          <tr><td><strong>Globe Artichoke</strong></td><td>Every 3–4 years</td><td>Cut offsets (side shoots with roots) from base in spring; pot up or replant</td><td>Parent plant declines after 4–5 years; offsets replace it</td></tr>
+          <tr><td><strong>Horseradish</strong></td><td>Annually at harvest</td><td>Replant side roots 6–8" long and pencil-thick after harvest</td><td>Near impossible to eradicate once established — site carefully</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Layering</h3>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">
+      Bend a branch to the ground, wound it lightly, bury the wounded section, and wait for roots to form
+      before severing from the parent. No special equipment needed — the parent plant keeps the cutting alive
+      while it roots.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Method</th><th>Time to Root</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Black Currant</strong></td><td>Simple layering — peg low branch into soil, cover with 3" of soil</td><td>6–10 weeks</td><td>Easiest layering candidate; almost always works</td></tr>
+          <tr><td><strong>Gooseberry</strong></td><td>Simple layering</td><td>8–12 weeks</td><td>Same method as black currant; do in late spring</td></tr>
+          <tr><td><strong>Hazelnut / Filbert</strong></td><td>Simple layering</td><td>12–18 months</td><td>Wound the buried section and apply rooting hormone for best results</td></tr>
+          <tr><td><strong>Raspberry</strong></td><td>Tip layering — bend cane tip to ground, bury 3–4"</td><td>6–8 weeks</td><td>Tip naturally wants to root; minimal effort needed</td></tr>
+          <tr><td><strong>Apple / Pear</strong></td><td>Air layering — wound branch, wrap with moist sphagnum moss and plastic film</td><td>8–16 weeks</td><td>Best for propagating named varieties without grafting; detach when roots fill the moss ball</td></tr>
+          <tr><td><strong>Mulberry</strong></td><td>Air layering or simple layering of low branches</td><td>8–12 weeks</td><td>Simple layering on young flexible branches is easiest</td></tr>
+          <tr><td><strong>Rugosa Rose</strong></td><td>Simple layering</td><td>8–12 weeks</td><td>Score the bark lightly at the burial point to encourage rooting</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Runners &amp; Offsets</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plant</th><th>Method</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Strawberries</strong></td><td>Pin runners to ground or into pots of compost; sever once rooted (6–8 weeks)</td><td>Take runners from your best-producing plants only; remove runners from plants in their first year to build root strength</td></tr>
+          <tr><td><strong>Egyptian Walking Onions</strong></td><td>Plant the bulbils that form at stem tops in late summer</td><td>Named for the way the stem bends under the weight of bulbils and "walks" across the bed; each bulbil is a clone</td></tr>
+          <tr><td><strong>Jerusalem Artichoke / Sunchoke</strong></td><td>Leave small tubers in ground at harvest; they regrow automatically</td><td>Nearly impossible to remove once established — choose your site carefully</td></tr>
+          <tr><td><strong>Raspberry</strong></td><td>Dig and transplant suckers that emerge from roots</td><td>Produces suckers freely from spreading root system; use to expand patch or share</td></tr>
+          <tr><td><strong>Globe Artichoke</strong></td><td>Remove basal offsets (side shoots) with a piece of root attached in spring</td><td>Pot up in free-draining mix until established; transplant after 4–6 weeks</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Grafting</h3>
+    <p style="font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">
+      Grafting joins a named variety (scion) onto a rootstock that controls tree size and vigour.
+      Used for apples, pears, plums, cherries, and other tree fruit where seed propagation won't
+      preserve the variety. A learnable skill — not complicated once practiced.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Graft Type</th><th>Best For</th><th>Season</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Whip and tongue</strong></td><td>Apple, pear — scion and rootstock similar diameter</td><td>Late winter, before bud break</td><td>Most reliable beginner graft; interlocking cut holds itself while healing</td></tr>
+          <tr><td><strong>Cleft graft</strong></td><td>Top-working old trees; large rootstock</td><td>Early spring</td><td>Split rootstock and insert 2 scions; remove weaker one once union forms</td></tr>
+          <tr><td><strong>Chip budding</strong></td><td>Stone fruit (plum, cherry, apricot)</td><td>Summer (July–August)</td><td>Single bud inserted into rootstock; high success rate on stone fruit</td></tr>
+          <tr><td><strong>T-budding</strong></td><td>Roses, stone fruit</td><td>Summer</td><td>Classic rose propagation method; fast and reliable</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box">
+      <strong>Rootstock controls tree size.</strong> M9 = very dwarf apple (6–8 ft, needs support).
+      M26 = semi-dwarf (10–14 ft). MM111 = standard (18–25 ft, no support needed).
+      For a food forest, semi-dwarf (M26 / M7) is usually the right balance of yield and manageability.
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes &mdash; By Stax <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fstax7780.github.io%2FSustainability-garden-guide%2F&count_bg=%234a7c2f&title_bg=%23333333&title=views&edge_flat=true" alt="View counter" style="position:absolute;opacity:0;width:1px;height:1px;">
+  </footer>
+
+</div>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

@@ -124,7 +124,14 @@
     }
   </style>  <style>img.emoji { height:1em; width:1em; vertical-align:-0.1em; }</style>
   <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-  <script>document.addEventListener("DOMContentLoaded",function(){twemoji.parse(document.body,{folder:"svg",ext:".svg"});});</script>
+  <script>
+    // Only apply Twemoji on Windows — mobile and Mac render flags natively
+    document.addEventListener("DOMContentLoaded", function () {
+      if (/Win/.test(navigator.platform)) {
+        twemoji.parse(document.body, { folder: "svg", ext: ".svg" });
+      }
+    });
+  </script>
 </head>
 <body>
 <div class="site-wrapper">

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes | Sustainability Garden Guide</title>
+  <meta name="description" content="Old-world recipes built around the guide's crops — colcannon, ribollita, borscht, pottage, elderberry syrup, and more. By Stax.">
+  <meta property="og:title" content="Recipes — Old-World Garden Cooking">
+  <meta property="og:description" content="Timeless recipes from medieval Europe and beyond, built around the crops in this guide. Whole food, no waste, nothing exotic.">
+  <meta property="og:type" content="website">
+  <meta name="author" content="By Stax">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="script.js"></script>
+  <script src="plants-data.js"></script>
+  <style>
+    .recipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .recipe-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .recipe-card h3 {
+      margin: 0.4rem 0 0.25rem;
+      color: var(--green-dark);
+      font-size: 1.1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    [data-theme="dark"] .recipe-card h3 {
+      color: #8fc85a;
+      border-bottom-color: #2d4020;
+    }
+
+    .recipe-origin {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .recipe-crops {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--green-mid);
+      margin-bottom: 0.75rem;
+    }
+
+    [data-theme="dark"] .recipe-crops { color: #7ab648; }
+
+    .recipe-cols {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 480px) {
+      .recipe-cols { grid-template-columns: 1fr; }
+    }
+
+    .recipe-card h4 {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 0 0 0.4rem;
+    }
+
+    .recipe-card ul,
+    .recipe-card ol {
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      color: var(--text);
+      padding-left: 1.2rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    [data-theme="dark"] .recipe-card ul,
+    [data-theme="dark"] .recipe-card ol { color: #cce4a8; }
+
+    .recipe-note {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.5rem;
+    }
+
+    [data-theme="dark"] .recipe-note { border-top-color: #2d4020; }
+
+    .section-note {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div>
+      <h1>🌱 Sustainability Garden Guide</h1>
+      <div class="tagline">Full nutritional self-sufficiency for one man and one woman</div>
+      <div class="tagline" style="font-style:italic;margin-top:3px;opacity:0.85;">"The ultimate goal of farming is not the growing of crops, but the cultivation and perfection of human beings." — <a href="https://en.wikipedia.org/wiki/Masanobu_Fukuoka" target="_blank" rel="noopener noreferrer" title="Learn more about Masanobu Fukuoka" style="color:inherit;text-decoration:underline;text-decoration-style:dotted;">Masanobu Fukuoka</a></div>
+    </div>
+    <button id="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰ Menu</button>
+    <div class="header-right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="site-logo-placeholder" title="By Stax">By Stax</div>
+      <button id="share-btn" onclick="sharePage()">⬆ Share</button>
+      <button id="theme-toggle" onclick="toggleTheme()">☾ Dark</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-section">Overview</div>
+    <a href="index.html">Home</a>
+    <div class="nav-section">Goals</div>
+    <a href="goal-1-nutrition.html">Goal 1 — Nutrition</a>
+    <a href="goal-2-annual.html">Goal 2 — Annual Garden</a>
+    <a href="goal-3-perennial.html">Goal 3 — Perennial Garden</a>
+    <div class="nav-section">Resources</div>
+    <a href="grow-calendar.html">Grow Calendar</a>
+    <a href="companion-planting.html">Companion Planting</a>
+    <a href="resources.html">Soil, Seeds &amp; Animals</a>
+    <a href="recipes.html" class="active">Recipes</a>
+  </nav>
+
+  <main class="site-main">
+    <h1>Recipes</h1>
+    <p class="page-intro">
+      Old-world recipes built around the crops in this guide. Most are centuries old —
+      the kind of food that sustained people through hard winters long before supermarkets.
+      Nothing exotic, nothing wasted.
+    </p>
+
+    <!-- ═══════════════════════════════════════ STAPLES ═══ -->
+    <h2>Staple Dishes</h2>
+    <p class="section-note">Calorie-dense, year-round recipes built on the guide's core crops.</p>
+
+    <div class="recipe-grid">
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇮🇪 Ireland · 18th century</div>
+        <h3>Colcannon</h3>
+        <div class="recipe-crops">Potatoes · Kale or Cabbage · Leeks</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 lbs potatoes</li>
+              <li>1 lb kale or cabbage, shredded</li>
+              <li>2 leeks, sliced</li>
+              <li>4 tbsp butter</li>
+              <li>½ cup milk or cream</li>
+              <li>Salt and pepper</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Boil potatoes until tender. Drain and mash with butter and milk.</li>
+              <li>Wilt shredded kale or cabbage in butter, 5 min.</li>
+              <li>Soften sliced leeks in butter until sweet, 8 min.</li>
+              <li>Fold kale and leeks into mash. Season well.</li>
+              <li>Serve with a well of butter in the centre.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">A winter staple for centuries — all ingredients store well into spring.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇮🇹 Tuscany · 14th century</div>
+        <h3>Ribollita</h3>
+        <div class="recipe-crops">Kale · Dry Beans · Onions · Carrots · Garlic · Tomatoes</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 cups dried white beans, soaked overnight</li>
+              <li>1 large bunch kale, chopped</li>
+              <li>2 onions, diced</li>
+              <li>3 carrots, diced</li>
+              <li>4 garlic cloves</li>
+              <li>2 cups crushed tomatoes</li>
+              <li>Stale bread, torn</li>
+              <li>Olive oil, rosemary, salt</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Cook soaked beans in fresh water until just tender, ~1 hour.</li>
+              <li>Sauté onion, carrot, garlic in olive oil until soft.</li>
+              <li>Add tomatoes and rosemary; cook 15 min.</li>
+              <li>Add beans and kale; simmer 30 min.</li>
+              <li>Stir in torn stale bread; simmer until thick.</li>
+              <li>Rest overnight. Re-heat (ribollita = "re-boiled") for best flavour.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">Originally peasant food made to stretch stale bread — one of the great soups of the world.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇺🇦 Eastern Europe · 14th century</div>
+        <h3>Borscht</h3>
+        <div class="recipe-crops">Beets · Cabbage · Carrots · Onions · Garlic</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>4 large beets, grated</li>
+              <li>½ head cabbage, shredded</li>
+              <li>2 carrots, grated</li>
+              <li>1 onion, diced</li>
+              <li>3 garlic cloves</li>
+              <li>2 tbsp cider vinegar</li>
+              <li>Fresh dill, salt</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Sauté onion in oil until soft.</li>
+              <li>Add grated beets and carrots; cook 5 min.</li>
+              <li>Add shredded cabbage and garlic.</li>
+              <li>Cover with 6 cups water or stock; simmer 40 min.</li>
+              <li>Add vinegar to preserve deep colour. Season well.</li>
+              <li>Serve with fresh dill. Add sour cream if available.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">All roots store through winter — a true cold-cellar recipe.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Medieval England · 14th century</div>
+        <h3>Pottage</h3>
+        <div class="recipe-crops">Dry Peas · Leeks · Turnips · Onions · Parsley</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 cups dried peas, soaked overnight</li>
+              <li>2 leeks, sliced</li>
+              <li>2 turnips, diced</li>
+              <li>1 onion, diced</li>
+              <li>Handful fresh parsley</li>
+              <li>Fresh thyme, salt</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Simmer soaked peas in 6 cups water until soft, ~1 hour.</li>
+              <li>Add diced leeks, turnips, and onion.</li>
+              <li>Cook until all vegetables are tender, 20 min more.</li>
+              <li>Stir in parsley and thyme. Season.</li>
+              <li>Serve thick as a stew or thin with more water as a soup.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">The everyday meal of medieval Europe for five centuries — simple, nourishing, filling.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🏛 Ancient Rome / Middle East · 2,000+ years</div>
+        <h3>Lentil Soup with Herbs</h3>
+        <div class="recipe-crops">Dry Peas / Lentils · Garlic · Onions · Carrots · Parsley</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 cups green or red lentils</li>
+              <li>1 onion, diced</li>
+              <li>4 garlic cloves, sliced</li>
+              <li>2 carrots, diced</li>
+              <li>1 tsp cumin</li>
+              <li>1 tsp coriander</li>
+              <li>Olive oil, lemon, parsley, salt</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Sauté onion and garlic in oil until golden.</li>
+              <li>Add lentils, carrots, spices, and 6 cups water.</li>
+              <li>Simmer 30–40 min until lentils are soft.</li>
+              <li>Finish with a squeeze of lemon and fresh parsley.</li>
+              <li>For a smoother texture, blend half the soup.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">Virtually unchanged since Roman times. One of the most complete plant-protein meals available.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇮🇹 Tuscany · 15th century</div>
+        <h3>Fagioli all'Uccelletto</h3>
+        <div class="recipe-crops">Dry Beans · Garlic · Tomatoes · Sage</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 cups dried white beans, soaked overnight</li>
+              <li>4 garlic cloves, whole</li>
+              <li>10 fresh sage leaves</li>
+              <li>1 cup crushed tomatoes</li>
+              <li>Generous olive oil, salt, black pepper</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Cook soaked beans in fresh water until just tender.</li>
+              <li>Warm generous olive oil in a wide pan.</li>
+              <li>Fry garlic and sage until fragrant, 2 min.</li>
+              <li>Add beans and crushed tomatoes.</li>
+              <li>Simmer 20 min until sauce is thick and beans are creamy.</li>
+              <li>Season well. Serve with crusty bread.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">The best use of dried beans in the Italian tradition — rich without meat.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🌽 Native American · Ancient</div>
+        <h3>Three Sisters Stew</h3>
+        <div class="recipe-crops">Corn · Dry Beans · Winter Squash · Onions · Garlic</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 cups dried beans, soaked overnight</li>
+              <li>2 cups dried or fresh corn kernels</li>
+              <li>1 medium winter squash, peeled and cubed</li>
+              <li>1 onion, diced</li>
+              <li>3 garlic cloves</li>
+              <li>Dried sage, salt</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Simmer soaked beans in 6 cups water for 1 hour.</li>
+              <li>Add cubed squash, corn, onion, garlic, and sage.</li>
+              <li>Simmer 30 min until squash is tender and stew is thick.</li>
+              <li>Season. Add more water for a thinner broth.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">The three crops grown together, cooked together. Complete protein when beans and corn are combined.</div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════ PRESERVATION ═══ -->
+    <h2>Preservation &amp; Fermentation</h2>
+    <p class="section-note">Techniques that turn a summer glut into a year-round supply.</p>
+
+    <div class="recipe-grid">
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇩🇪 Germany / Eastern Europe · Ancient</div>
+        <h3>Sauerkraut</h3>
+        <div class="recipe-crops">Cabbage · Salt</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 lbs cabbage, thinly shredded</li>
+              <li>1 tbsp non-iodized salt per 2 lbs cabbage</li>
+              <li>Caraway seeds (optional)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Shred cabbage finely. Toss with salt.</li>
+              <li>Massage firmly 5–10 min until cabbage releases liquid.</li>
+              <li>Pack tightly into a clean jar, pressing until brine covers cabbage.</li>
+              <li>Weight down to keep submerged. Cover loosely.</li>
+              <li>Ferment at room temperature 1–4 weeks. Taste from day 7.</li>
+              <li>Move to cold storage when tang is right. Keeps months.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">Live probiotics, vitamin C, preserved calories — two ingredients, no equipment needed.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🥒 Eastern Europe · Ancient</div>
+        <h3>Lacto-Fermented Pickles</h3>
+        <div class="recipe-crops">Cucumbers · Garlic · Dill</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>1 lb small cucumbers</li>
+              <li>1 tbsp non-iodized salt per cup of water</li>
+              <li>4 garlic cloves</li>
+              <li>Fresh dill heads and stems</li>
+              <li>Optional: horseradish leaf, oak leaf (keeps crunch)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Dissolve salt in cold water to make brine.</li>
+              <li>Pack cucumbers into a jar with garlic and dill.</li>
+              <li>Add a horseradish or oak leaf if available — tannins keep pickles crisp.</li>
+              <li>Pour brine over to fully cover. Weight down.</li>
+              <li>Ferment at room temperature 3–7 days. Taste daily.</li>
+              <li>Refrigerate once sour enough. Keeps 3–6 months cold.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">No vinegar, no canning — salt and time do all the work. Probiotic and shelf-stable.</div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════ PERENNIAL CROPS ═══ -->
+    <h2>Perennial Crop Recipes</h2>
+    <p class="section-note">Recipes from the food forest — trees, shrubs, and hedgerow harvests.</p>
+
+    <div class="recipe-grid">
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇬🇧 Old England · Medieval</div>
+        <h3>Elderberry Syrup</h3>
+        <div class="recipe-crops">Elderberry · Ginger · Honey</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 cups fresh elderberries (stripped from stems)</li>
+              <li>3 cups water</li>
+              <li>1 tbsp fresh ginger, grated</li>
+              <li>1 tsp cinnamon</li>
+              <li>3–4 cloves</li>
+              <li>1 cup raw honey</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Simmer elderberries, ginger, cinnamon, and cloves in water 45 min until reduced by half.</li>
+              <li>Mash berries, then strain through muslin or cheesecloth. Discard solids.</li>
+              <li>Cool liquid below 105°F — heat destroys honey's medicinal properties.</li>
+              <li>Stir in honey until dissolved. Bottle and refrigerate.</li>
+              <li>Take 1 tbsp daily as immune tonic; 1 tbsp every 2–3 hours when ill.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">Keeps 3 months refrigerated. Raw elderberries are mildly toxic — always cook first. Use dried berries off-season (halve the quantity).</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇸🇪 Scandinavia / Britain · WWII rationing</div>
+        <h3>Rose Hip Syrup</h3>
+        <div class="recipe-crops">Rugosa Rose (hips) · Honey</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 lbs ripe rose hips</li>
+              <li>6 cups water (split: 4 + 2)</li>
+              <li>¾ cup honey or sugar</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Trim blossom ends and stems. Chop hips roughly.</li>
+              <li>Boil in 4 cups water for 15 min. Strain through muslin — do not squeeze (fine seed hairs irritate the throat).</li>
+              <li>Return liquid to pan. Add 2 more cups water to pulp, boil again, strain again.</li>
+              <li>Combine both strained liquids. Add honey; simmer 5 min.</li>
+              <li>Bottle hot. Refrigerate after opening.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">Rose hips contain 20× more vitamin C than oranges. Used as a national vitamin C supplement across Britain during WWII when citrus was rationed.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇮🇹 Tuscany / Corsica · Medieval</div>
+        <h3>Castagnaccio</h3>
+        <div class="recipe-crops">Chestnut · Walnuts · Rosemary</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>2 cups chestnut flour</li>
+              <li>1½ cups water</li>
+              <li>2 tbsp olive oil + extra for pan</li>
+              <li>Pinch of salt</li>
+              <li>Handful of walnuts or pine nuts</li>
+              <li>Fresh rosemary sprigs</li>
+              <li>Handful of raisins (optional)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>Whisk chestnut flour with water and olive oil until a smooth, thin batter forms. Season with salt.</li>
+              <li>Pour into a well-oiled baking pan (should be about ½ inch deep).</li>
+              <li>Scatter walnuts, rosemary, and raisins across the top.</li>
+              <li>Bake at 375°F (190°C) for 30–35 min until top is cracked and edges pull away.</li>
+              <li>Serve warm or at room temperature. Naturally sweet, earthy, gluten-free.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">Medieval peasant food of the Tuscan and Ligurian highlands — chestnut flour kept people alive through winter when grain ran short.</div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-origin">🇬🇧 Britain / Scandinavia · Medieval</div>
+        <h3>Nettle Soup</h3>
+        <div class="recipe-crops">Spinach (or nettles) · Potatoes · Leeks · Garlic</div>
+        <div class="recipe-cols">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>
+              <li>4 cups young nettles or spinach</li>
+              <li>2 medium potatoes, diced</li>
+              <li>1 leek, sliced</li>
+              <li>2 garlic cloves</li>
+              <li>4 cups water or stock</li>
+              <li>Salt, butter or cream (optional)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Method</h4>
+            <ol>
+              <li>If using nettles: harvest young tops with gloves; rinse well.</li>
+              <li>Simmer diced potato and leek in stock for 15 min.</li>
+              <li>Add nettles or spinach and garlic. Cooking destroys nettle sting.</li>
+              <li>Simmer 5 min. Blend until smooth.</li>
+              <li>Season. Finish with a knob of butter or swirl of cream.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="recipe-note">A spring tonic eaten across northern Europe for millennia. Nettles are one of the most mineral-dense wild greens available — iron, calcium, magnesium. Use spinach as a year-round substitute.</div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    Sustainability Garden Guide &mdash; All values based on USDA Dietary Reference Intakes &mdash; By Stax
+  </footer>
+
+</div>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

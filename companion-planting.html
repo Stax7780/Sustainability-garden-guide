@@ -40,6 +40,11 @@
       gap: 1.25rem;
     }
 
+    /* Layered guild cards span full width so text rows don't wrap */
+    .guild-card:has(.guild-layers) {
+      grid-column: 1 / -1;
+    }
+
     /* ── Guild layer layout ───────────────────────────────── */
     .guild-layers { margin-top: 0.5rem; }
 

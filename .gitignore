@@ -1,0 +1,10 @@
+# Review screenshots — local only
+bug pics/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp

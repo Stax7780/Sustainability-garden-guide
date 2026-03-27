@@ -46,24 +46,13 @@
     }
 
     /* ── Guild layer layout ───────────────────────────────── */
-    .guild-layers { margin-top: 0.5rem; }
+    .guild-layers { margin-top: 0.25rem; }
 
     .guild-layer {
-      border-radius: 5px;
-      padding: 0.6rem 0.75rem;
-      margin-bottom: 0.45rem;
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--border);
     }
-    .guild-layer:last-child { margin-bottom: 0; }
-
-    .layer-tall     { background: #dff0cc; border-left: 3px solid #3d7a18; }
-    .layer-mid      { background: #eaf5d8; border-left: 3px solid #6aaa38; }
-    .layer-ground   { background: #f3f8e4; border-left: 3px solid #a8cc5a; }
-    .layer-root     { background: #f0e8d4; border-left: 3px solid #8a6030; }
-
-    [data-theme="dark"] .layer-tall    { background: #1c3a0c; border-left-color: #5a9a28; }
-    [data-theme="dark"] .layer-mid     { background: #192e0c; border-left-color: #6aaa40; }
-    [data-theme="dark"] .layer-ground  { background: #1c2c0c; border-left-color: #8aaa50; }
-    [data-theme="dark"] .layer-root    { background: #261c0a; border-left-color: #7a5828; }
+    .guild-layer:first-child { border-top: none; }
 
     .layer-title {
       font-family: var(--font-ui);
@@ -72,7 +61,7 @@
       text-transform: uppercase;
       letter-spacing: 0.07em;
       color: var(--text-muted);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .layer-plants {

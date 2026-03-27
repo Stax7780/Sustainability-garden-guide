@@ -72,20 +72,19 @@
 
     .layer-plants {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
+      flex-direction: column;
+      gap: 0.28rem;
     }
 
     .guild-plant {
-      background: rgba(255,255,255,0.6);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 0.3rem 0.5rem;
-      min-width: 110px;
-      flex: 0 1 auto;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      line-height: 1.4;
     }
-
-    [data-theme="dark"] .guild-plant { background: rgba(0,0,0,0.25); }
 
     .plant-role-badge {
       display: inline-block;
@@ -96,7 +95,7 @@
       letter-spacing: 0.04em;
       padding: 0.08em 0.4em;
       border-radius: 2px;
-      margin-bottom: 0.12rem;
+      flex-shrink: 0;
     }
 
     .role-anchor      { background: #2a5010; color: #fff; }
@@ -114,18 +113,20 @@
     [data-theme="dark"] .role-rhizome     { background: #6a4818; }
 
     .plant-name {
-      display: block;
       font-weight: 600;
-      font-size: 0.82rem;
       color: var(--text);
     }
 
     .plant-fn {
-      display: block;
-      font-size: 0.72rem;
       color: var(--text-muted);
-      line-height: 1.35;
-      margin-top: 0.08rem;
+      flex: 1;
+    }
+
+    .plant-pos {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+      white-space: nowrap;
     }
 
     [data-theme="dark"] .plant-name { color: #cce4a8; }
@@ -201,111 +202,39 @@
           <div class="guild-layer layer-tall">
             <div class="layer-title">🌳 Canopy</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-anchor">Anchor</span>
-                <span class="plant-name">Apple or Pear</span>
-                <span class="plant-fn">Central crop; fruit, shade, structure</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Rhubarb</span>
-                <span class="plant-fn">Edible, medicinal, dynamic accumulator, soil insulator</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Sunflowers</span>
-                <span class="plant-fn">Edible, attracts pollinators &amp; wild birds, wind protection</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-climber">Climber</span>
-                <span class="plant-name">Nasturtium</span>
-                <span class="plant-fn">Edible, trap crop for aphids, insulates soil, weed suppression</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-anchor">Anchor</span> <span class="plant-name">Apple or Pear</span> <span class="plant-fn">— Central crop</span> <span class="plant-pos">· Center</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Rhubarb</span> <span class="plant-fn">— Dynamic accumulator; good mulch, soil insulator</span> <span class="plant-pos">· Drip line</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Sunflowers</span> <span class="plant-fn">— Edible seeds, attracts pollinators &amp; birds, wind protection</span> <span class="plant-pos">· North / west side</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-climber">Climber</span> <span class="plant-name">Nasturtium</span> <span class="plant-fn">— Edible, trap crop for aphids, insulates &amp; covers soil</span> <span class="plant-pos">· Outer ring</span></div>
             </div>
           </div>
           <div class="guild-layer layer-mid">
             <div class="layer-title">🌿 Shrub / Mid Layer</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-shrub">Shrub</span>
-                <span class="plant-name">Blackcurrants</span>
-                <span class="plant-fn">Edible, medicinal, attracts pollinators &amp; birds, wind protection</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-shrub">Shrub</span>
-                <span class="plant-name">Raspberries</span>
-                <span class="plant-fn">Edible, medicinal, wind protection; berries &amp; leaves used</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Onions</span>
-                <span class="plant-fn">Edible, medicinal, pest deterrent</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Dandelions</span>
-                <span class="plant-fn">Edible, medicinal, dynamic accumulator, attracts pollinators</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-shrub">Shrub</span> <span class="plant-name">Blackcurrants</span> <span class="plant-fn">— Edible, medicinal; attracts pollinators &amp; birds, wind protection</span> <span class="plant-pos">· Outer drip line</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-shrub">Shrub</span> <span class="plant-name">Raspberries</span> <span class="plant-fn">— Edible, medicinal; berries &amp; leaves used, wind protection</span> <span class="plant-pos">· Outer edge</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Onions</span> <span class="plant-fn">— Edible, medicinal, pest deterrent</span> <span class="plant-pos">· Under canopy</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Dandelions</span> <span class="plant-fn">— Edible, medicinal, dynamic accumulator, attracts pollinators</span> <span class="plant-pos">· Outer ring</span></div>
             </div>
           </div>
           <div class="guild-layer layer-ground">
             <div class="layer-title">🌱 Ground / Herb Layer</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Sage</span>
-                <span class="plant-fn">Edible, medicinal, pest deterrent</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-shrub">Shrub</span>
-                <span class="plant-name">Oregano</span>
-                <span class="plant-fn">Edible, medicinal, pest deterrent</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Marigolds</span>
-                <span class="plant-fn">Edible, medicinal, pest deterrent, weed suppression</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-groundcover">Groundcover</span>
-                <span class="plant-name">White Clover</span>
-                <span class="plant-fn">Medicinal, weed suppressant, nitrogen-fixer</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Chives</span>
-                <span class="plant-fn">Repels apple scab and aphids; under canopy</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Yarrow</span>
-                <span class="plant-fn">Attracts predatory wasps; mineral accumulator</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Chives</span> <span class="plant-fn">— Repel apple scab and aphids</span> <span class="plant-pos">· Under canopy</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Sage</span> <span class="plant-fn">— Edible, medicinal, pest deterrent</span> <span class="plant-pos">· Bed border</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-shrub">Shrub</span> <span class="plant-name">Oregano</span> <span class="plant-fn">— Edible, medicinal, pest deterrent</span> <span class="plant-pos">· Bed border</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Marigolds</span> <span class="plant-fn">— Edible, medicinal, pest deterrent, weed suppression</span> <span class="plant-pos">· Outer ring</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-groundcover">Groundcover</span> <span class="plant-name">White Clover</span> <span class="plant-fn">— Nitrogen-fixing; weed suppressant, pollinator support</span> <span class="plant-pos">· Ground cover</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Yarrow</span> <span class="plant-fn">— Attracts predatory wasps; mineral accumulator</span> <span class="plant-pos">· Outer ring</span></div>
             </div>
           </div>
           <div class="guild-layer layer-root">
             <div class="layer-title">🌰 Root Layer</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-rhizome">Rhizome</span>
-                <span class="plant-name">Carrots</span>
-                <span class="plant-fn">Edible, weed suppression, loosens soil</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-rhizome">Rhizome</span>
-                <span class="plant-name">Beetroot</span>
-                <span class="plant-fn">Edible, medicinal, natural dye</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-rhizome">Rhizome</span>
-                <span class="plant-name">Radish</span>
-                <span class="plant-fn">Edible, breaks up compaction, slug trap</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Daffodil</span>
-                <span class="plant-fn">Repels deer, moles, voles from root zone</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-rhizome">Rhizome</span> <span class="plant-name">Carrots</span> <span class="plant-fn">— Edible, weed suppression, loosens soil</span> <span class="plant-pos">· Ground cover</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-rhizome">Rhizome</span> <span class="plant-name">Beetroot</span> <span class="plant-fn">— Edible, medicinal, natural dye</span> <span class="plant-pos">· Ground cover</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-rhizome">Rhizome</span> <span class="plant-name">Radish</span> <span class="plant-fn">— Edible, bug trap, breaks compaction</span> <span class="plant-pos">· Ground cover</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Daffodil</span> <span class="plant-fn">— Repels deer, moles, voles from root zone</span> <span class="plant-pos">· Drip line ring</span></div>
             </div>
           </div>
         </div>
@@ -396,76 +325,32 @@
           <div class="guild-layer layer-tall">
             <div class="layer-title">🌿 Tall Layer</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-anchor">Anchor</span>
-                <span class="plant-name">Tomato</span>
-                <span class="plant-fn">Central crop; edible, shades soil, deters carrot pests</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Sunflower</span>
-                <span class="plant-fn">Attracts pollinators, wind protection, supports climbing beans</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-shrub">Shrub</span>
-                <span class="plant-name">Borage</span>
-                <span class="plant-fn">Edible, medicinal, deters tomato hornworm, attracts pollinators</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-anchor">Anchor</span> <span class="plant-name">Tomato</span> <span class="plant-fn">— Edible, shades soil, deters carrot pests</span> <span class="plant-pos">· Center / trellis</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Sunflower</span> <span class="plant-fn">— Attracts pollinators, wind protection, supports climbing beans</span> <span class="plant-pos">· Outer edge</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-shrub">Shrub</span> <span class="plant-name">Borage</span> <span class="plant-fn">— Edible, medicinal, deters tomato hornworm, attracts pollinators</span> <span class="plant-pos">· Outer ring</span></div>
             </div>
           </div>
           <div class="guild-layer layer-mid">
             <div class="layer-title">🌱 Mid Layer</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Onion</span>
-                <span class="plant-fn">Edible, medicinal, deters pests, loosens soil</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-groundcover">Groundcover</span>
-                <span class="plant-name">Basil</span>
-                <span class="plant-fn">Deters aphids &amp; whitefly, covers ground, improves tomato growth</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-climber">Climber</span>
-                <span class="plant-name">Beans</span>
-                <span class="plant-fn">Edible, fix nitrogen, climb sunflower stems</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Onion</span> <span class="plant-fn">— Edible, medicinal, deters pests, loosens soil</span> <span class="plant-pos">· Between plants</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-groundcover">Groundcover</span> <span class="plant-name">Basil</span> <span class="plant-fn">— Deters aphids &amp; whitefly, covers ground, improves tomato growth</span> <span class="plant-pos">· Between plants</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-climber">Climber</span> <span class="plant-name">Beans</span> <span class="plant-fn">— Edible, fix nitrogen, climb sunflower stems</span> <span class="plant-pos">· Outer edge</span></div>
             </div>
           </div>
           <div class="guild-layer layer-ground">
             <div class="layer-title">🍂 Ground Layer</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Marigold</span>
-                <span class="plant-fn">Edible, medicinal, repels nematodes &amp; whitefly, attracts pollinators</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-groundcover">Groundcover</span>
-                <span class="plant-name">Arugula</span>
-                <span class="plant-fn">Edible, covers ground, attracts pollinators</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-climber">Climber</span>
-                <span class="plant-name">Nasturtium</span>
-                <span class="plant-fn">Edible flowers, trap crop for aphids, covers bare soil</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Marigold</span> <span class="plant-fn">— Edible, medicinal, repels nematodes &amp; whitefly, attracts pollinators</span> <span class="plant-pos">· Bed border</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-groundcover">Groundcover</span> <span class="plant-name">Arugula</span> <span class="plant-fn">— Edible, covers ground, attracts pollinators</span> <span class="plant-pos">· Between plants</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-climber">Climber</span> <span class="plant-name">Nasturtium</span> <span class="plant-fn">— Edible flowers, trap crop for aphids, covers bare soil</span> <span class="plant-pos">· Bed edge</span></div>
             </div>
           </div>
           <div class="guild-layer layer-root">
             <div class="layer-title">🌰 Root Layer</div>
             <div class="layer-plants">
-              <div class="guild-plant">
-                <span class="plant-role-badge role-rhizome">Rhizome</span>
-                <span class="plant-name">Carrot</span>
-                <span class="plant-fn">Edible, loosens soil — plant 15 cm+ from tomato stem to avoid stunting</span>
-              </div>
-              <div class="guild-plant">
-                <span class="plant-role-badge role-herbaceous">Herbaceous</span>
-                <span class="plant-name">Parsley</span>
-                <span class="plant-fn">Edible, attracts predatory wasps, high vitamin K</span>
-              </div>
+              <div class="guild-plant"><span class="plant-role-badge role-rhizome">Rhizome</span> <span class="plant-name">Carrot</span> <span class="plant-fn">— Edible, loosens soil; plant 15 cm+ from tomato stem to avoid stunting</span> <span class="plant-pos">· Between plants</span></div>
+              <div class="guild-plant"><span class="plant-role-badge role-herbaceous">Herbaceous</span> <span class="plant-name">Parsley</span> <span class="plant-fn">— Edible, attracts predatory wasps, high vitamin K</span> <span class="plant-pos">· Between plants</span></div>
             </div>
           </div>
         </div>
